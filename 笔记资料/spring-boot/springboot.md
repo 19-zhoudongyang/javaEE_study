@@ -276,8 +276,62 @@
 >>>>>- ######cache:
 >>>>>>- Period:11000 静态资源缓存11000秒
 >>- ###请求参数处理
->>>- ####RESTFul风格
+>>>- ####请求映射
+>>>>- #####RESTFul风格:需要在配置文件中开启HiddenHttpMethodFilter过滤器：mvc.hiddenmethod.filter.enabled:true
+>>>>>- ######额外兼容PUT/DELETE/PATCH方式的请求
+>>>>- ##### 请求映射原理
+>>>>> ![1](springboot_pic/springboot29.PNG)
+>>>>>
+>>>>> ![1](springboot_pic/springboot30.PNG)
+>>>>> ![1](springboot_pic/springboot31.PNG)
+>>>>> ![1](springboot_pic/springboot32.PNG)
+>>>- ####普通参数与基本注解
+>>>> ![1](springboot_pic/springboot33.PNG)
+>>>>- #####@RequestAttribute
+>>>>> ![1](springboot_pic/springboot34.PNG)
+>>>>- #####矩阵变量
+>>>>> ![1](springboot_pic/springboot35.PNG)
+>>>>>- ######使用注解@MatrixVariable获取矩阵变量
+>>>>>>- 因为SpringBoot自动移除url路径请求分号(;)后的内容，所以需要关闭移除功能，有两种方式：
+>>>>>>>- 1.配置类实现WebMvcConfigurer接口，重写configurePathMatch方法![1](springboot_pic/springboot37.PNG)
+>>>>>>>- 2.往IOC容器添加WebMvcConfigurer组件，也是重写configurePathMatch方法![1](springboot_pic/springboot38.PNG)
+>>>>>>- 使用注解@MatrixVariable获取矩阵变量 ![1](springboot_pic/springboot36.PNG)![1](springboot_pic/springboot39.PNG)
+>>>>>>>- 当多个矩阵变量的key值相同时，获取的写法![1](springboot_pic/springboot40.PNG)
+>>>- ####POJO封装过程
+>>>- ####参数处理原理
+>>>>- 各种类型参数解析原理
+>>>>>- ######注解：
+>>>>>>![1](springboot_pic/springboot41.PNG)![1](springboot_pic/springboot42.PNG)![1](springboot_pic/springboot46.PNG)![1](springboot_pic/springboot43.PNG)![1](springboot_pic/springboot44.PNG)![1](springboot_pic/springboot45.PNG)![1](springboot_pic/springboot47.PNG)![1](springboot_pic/springboot48.PNG)![1](springboot_pic/springboot49.PNG)![1](springboot_pic/springboot55.PNG)
+>>>>>- Servlet API：
+>>>>>>![1](springboot_pic/springboot50.PNG)
+>>>>>- ######复杂参数：
+>>>>>>![1](springboot_pic/springboot51.PNG)![1](springboot_pic/springboot52.PNG)![1](springboot_pic/springboot53.PNG)![1](springboot_pic/springboot54.PNG)
+>>>>>- ######自定义对象参数：
+>>>>>>![1](springboot_pic/springboot56.PNG)![1](springboot_pic/springboot57.PNG)![1](springboot_pic/springboot58.PNG)
+>>>>>- ######自定义Converter
+>>>>>>![1](springboot_pic/springboot60.PNG)
+>>>>>>- #####两种方式
+>>>>>>>- 1.配置类实现WebMvcConfigurer接口，重写addFormatters方法
+>>>>>>>- 2.往IOC容器添加WebMvcConfigurer组件，也是重写addFormatters方法 ![1](springboot_pic/springboot61.PNG)
 >>- ###数据响应与内容协商
+>>>- ####响应JSON
+>>>>- #####jackson.jar+@ResponseBody
+>>>>>- ######SpringBoot的web场景已经自动引入了json依赖 
+>>>>>- ######使用注解@ResponseBody标注控制器方法，访问此控制器时即可返回json数据
+>>>>>>![1](springboot_pic/springboot62.PNG)
+>>>>- HTTPMessageConverter
+>>>- ####内容协商(根据客户端的接收能力不同，返回不同媒体类型的数据)
+>>>>- #####引入XML依赖
+>>>>>       <!--XML依赖-->
+>>>>>       <dependency>
+>>>>>           <groupId>com.fasterxml.jackson.dataformat</groupId>
+>>>>>           <artifactId>jackson-dataformat-xml</artifactId>             
+>>>>>       </dependency>             
+>>>> ![1](springboot_pic/springboot63.PNG)
+>>>> ![1](springboot_pic/springboot64.PNG)
+>>>> ![1](springboot_pic/springboot65.PNG)
+>>>- ####自定义MessageConverter 
+>>>> ![1](springboot_pic/springboot66.PNG)
 >>- ###视图解析与模板引擎
 >>- ###拦截器
 >>- ###跨域
