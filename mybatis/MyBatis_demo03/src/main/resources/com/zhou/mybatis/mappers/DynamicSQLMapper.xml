@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//com.zhou.mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhou.mybatis.mappers.DynamicSQLMapper">
+
+    <!--开启二级缓存-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+    <resultMap id="getEmpByConditionResultMap" type="Emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="sex" column="sex"></result>
+        <result property="email" column="email"></result>
+        <association property="dept" javaType="Dept">
+            <id property="did" column="did"></id>
+            <result property="deptName" column="dept_name"></result>
+        </association>
+    </resultMap>
+    <!--    List<Emp> getEmpByCondition(Emp emp);-->
+    <select id="getEmpByCondition" resultMap="getEmpByConditionResultMap">
+        select * from t_emp
+        <trim prefix="where" suffixOverrides="and|or">
+            <if test="empName != null and empName !=''">
+                emp_name = #{empName} and
+            </if>
+            <if test="age != null and age !=''">
+                age = #{age} or
+            </if>
+            <if test="sex != null and sex !=''">
+                sex = #{sex} and
+            </if>
+            <if test="email != null and email !=''">
+                email = #{email} or
+            </if>
+        </trim>
+    </select>
+
+    <sql id="empColumns">eid,emp_name,age,sex,email</sql>
+    <!--List<Emp> getEmpByChoose(Emp emp);-->
+    <select id="getEmpByChoose" resultMap="getEmpByConditionResultMap">
+        select <include refid="empColumns"></include> from t_emp
+        <where>
+            <choose>
+                <when test="empName != null and empName !=''">
+                    emp_name = #{empName}
+                </when>
+                <when test="age != null and age !=''">
+                    age = #{age}
+                </when>
+                <when test="sex != null and sex !=''">
+                    sex= #{sex}
+                </when>
+                <when test="email != null and email !=''">
+                    email = #{email}
+                </when>
+                <otherwise>did = 1</otherwise>
+            </choose>
+        </where>
+    </select>
+
+    <!--    int deleteMoreByArray(Integer[] eids);-->
+    <delete id="deleteMoreByArray">
+        delete from t_emp where eid in
+            /**
+            *collection填写数组或集合名
+            *item填写数组或集合中的每一条数据
+            *separator填写分隔符
+            *open填写以什么开始(foreach前添加内容)
+            *close填写以什么结束(foreach后添加内容)
+            */
+        <foreach collection="eids" item="eid" separator="," open="(" close=")">
+                #{eid}
+        </foreach>
+    </delete>
+
+    <!--    int insertMoreByList(List<Emp> emps);-->
+    <insert id="insertMoreByList">
+        insert into t_emp values
+        <foreach collection="emps" item="emp" separator=",">
+            (null,#{emp.empName},#{emp.age},#{emp.sex},#{emp.email},null)
+        </foreach>
+    </insert>
+</mapper>

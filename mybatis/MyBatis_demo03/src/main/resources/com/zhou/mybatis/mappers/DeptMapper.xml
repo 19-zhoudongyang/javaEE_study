@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//com.zhou.mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhou.mybatis.mappers.DeptMapper">
+
+    <resultMap id="getEmpAndDeptByStepTwoResultMap" type="Dept">
+        <id property="did" column="did"></id>
+        <result property="deptName" column="dept_name"></result>
+    </resultMap>
+    <!--分布查询第二步：通过did查询员工的部门信息-->
+    <!--    Dept getEmpAndDeptByStepTwo(@Param("did") Integer did);-->
+    <select id="getEmpAndDeptByStepTwo" resultMap="getEmpAndDeptByStepTwoResultMap">
+        select * from t_dept where did = #{did}
+    </select>
+
+    <!--使用collection标签处理一对多关系-->
+    <resultMap id="getDeptAndEmpResultMap" type="Dept">
+        <id property="did" column="did"></id>
+        <result property="deptName" column="dept_name"></result>
+        <!--使用collection标签处理一对多关系-->
+        <!--ofType填写的是集合内数据的类型-->
+        <collection property="emps" ofType="Emp">
+            <id property="eid" column="eid"></id>
+            <result property="empName" column="emp_name"></result>
+            <result property="age" column="age"></result>
+            <result property="sex" column="sex"></result>
+            <result property="email" column="email"></result>
+        </collection>
+    </resultMap>
+    <!--    Dept getDeptAndEmp(@Param("did") Integer did);-->
+    <select id="getDeptAndEmp" resultMap="getDeptAndEmpResultMap">
+        select * from t_dept left join t_emp on t_dept.did = t_emp.did where t_dept.did = #{did}
+    </select>
+
+</mapper>

@@ -1,0 +1,12 @@
+#一、JPA概述
+##(一)JPA是什么
+![1](JPA_pic/whatisJPA.png)
+##(二)JPA和Hibernate的关系
+![1](JPA_pic/JPAAndHibernate.png)
+##(三)JPA的优势
+![1](JPA_pic/JPA_advantage.png)
+##(四)JPA的技术
+![1](JPA_pic/JPA_technology.png)
+#二、JPA的使用
+##(一)使用JPA持久化对象的步骤
+![1](JPA_pic/useJPA1.png)
