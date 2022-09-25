@@ -332,6 +332,13 @@
 >>>> ![1](springboot_pic/springboot65.PNG)
 >>>- ####自定义MessageConverter 
 >>>> ![1](springboot_pic/springboot66.PNG)
+>>>>
+>>>> ![1](springboot_pic/springboot67.PNG)
+>>>>
+>>>> ![1](springboot_pic/springboot68.PNG)
+>>>>- #####两种方式
+>>>>>- 1.配置类实现WebMvcConfigurer接口，重写extendMessageConverters方法(拓展更多自定义MessageConverter),或者configureMessageConverters(覆盖原生的MessageConverter)
+>>>>>- 2.往IOC容器添加WebMvcConfigurer组件，也是重写extendMessageConverters方法或configureMessageConverters方法 ![1](springboot_pic/springboot61.PNG)
 >>- ###视图解析与模板引擎
 >>- ###拦截器
 >>- ###跨域
