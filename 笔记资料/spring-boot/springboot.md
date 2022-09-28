@@ -538,7 +538,8 @@
 >>>- 在测试目录下创建一个类，使用注解@SpringBootTest(使用spring容器)，创建测试方法，使用注解@Test标注
 >- ##指标监控
 >> ![1](springboot_pic/springboot133.PNG)![1](springboot_pic/springboot134.PNG)![1](springboot_pic/springboot135.PNG)
->> EndPoint:![1](springboot_pic/springboot136.PNG)
+>>- EndPoint:
+>>> ![1](springboot_pic/springboot139.PNG)![1](springboot_pic/springboot140.PNG)![1](springboot_pic/springboot141.PNG)![1](springboot_pic/springboot138.PNG)![1](springboot_pic/springboot142.PNG)![1](springboot_pic/springboot143.PNG)
 >>- ###SpringBoot Actuator和EndPoint
 >>>- ####配置：
 >>>>- #####引入依赖
@@ -547,7 +548,37 @@
 >>>>>           <groupId>org.springframework.boot</groupId>
 >>>>>           <artifactId>spring-boot-starter-actuator</artifactId>
 >>>>>       </dependency>
+>>>>- #####配置文件设置
+>>>>> ![1](springboot_pic/springboot137.PNG)![1](springboot_pic/springboot144.PNG)
+>>>>- #####定制EndPoint，创建一个类继承AbstractHealthIndicator类，重写doHealthCheck方法，并作为组件加入IOC容器(@Component)
+>>>>> ![1](springboot_pic/springboot145.PNG)
+>>>>- #####Boot Admin Server(可视化指标监控)
+>>>>>- #####引入依赖
+>>>>>>      <dependency>
+>>>>>>          <groupId>de.codecentrict</groupId>
+>>>>>>          <artifactId>spring-boot-admin-starter-server</artifactId>
+>>>>>>          <version>2.7.5</version>
+>>>>>>      </dependency>
+>>>>>- #####在主程序类上使用注解@EnableAdminServer标注
+>>>>>- #####注册客户端
+>>>>>>- 引入依赖
+>>>>>>>     <dependency>
+>>>>>>>         <groupId>de.codecentric</groupId>
+>>>>>>>         <artifactId>spring-boot-admin-starter-client</artifactId>
+>>>>>>>         <version>2.7.5</version>
+>>>>>>>     </dependency>
+>>>>>>- 在配置文件里填写汇报的服务器地址：spring.boot.admin.client.url=http://localhost:服务器端口号
+>>>>>>- 在配置文件里配置以web方式暴露端点：management.endpoints.web.exposure.include=*
 >- ##原理解析
-
+>> ![1](springboot_pic/springboot146.PNG)![1](springboot_pic/springboot150.PNG)![1](springboot_pic/springboot152.PNG)![1](springboot_pic/springboot153.PNG)![1](springboot_pic/springboot154.PNG)![1](springboot_pic/springboot156.PNG)![1](springboot_pic/springboot157.PNG)![1](springboot_pic/springboot158.PNG)![1](springboot_pic/springboot159.PNG)
+>>- ###生产环境的切换：
+>>>- ####配置文件名后缀：application-test：测试环境!
+>>>> ![1](springboot_pic/springboot147.PNG)
+>>>- ####启用生产环境：在默认配置文件application里填写：spring.profiles.active=
+>>>> ![1](springboot_pic/springboot148.PNG)
+>>>>- 打包后命令行激活生产环境：
+>>>>>![1](springboot_pic/springboot149.PNG)
+>>>- ####分组启用生产环境 
+>>>>![1](springboot_pic/springboot151.PNG)
 #四、Spring Boot场景整合
 >- ![1](springboot_pic/springboot10.PNG)
