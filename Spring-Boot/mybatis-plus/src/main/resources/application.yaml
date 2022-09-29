@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    #配置数据源类型
+    type: com.zaxxer.hikari.HikariDataSource
+    #配置连接数据库的信息
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatis_plus?severTimezoneGMT%2B8&characterEncoding=utf-8&userSSL=false
+    username: root
+    password: Weizijierhuo0214
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
