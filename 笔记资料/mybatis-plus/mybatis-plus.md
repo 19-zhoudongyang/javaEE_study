@@ -3,8 +3,8 @@
 #二、代码和文档地址
 > ![1](mybatis-plus_pic/mybatis-plus02.PNG)
 #三、快速配置
->- ##创建一个SpringBoot工程
->- ##导入依赖
+>- ##1.创建一个SpringBoot工程
+>- ##2.导入依赖
 >>      <!--MyBatis-Plus依赖-->
 >>      <dependency>
 >>          <groupId>com.baomidou</groupId>
@@ -23,3 +23,4 @@
 >>          <artifactId>mysql-connector-java</artifactId>
 >>          <scope>runtime</scope>
 >>      </dependency>
+>- ##3.设置数据源
