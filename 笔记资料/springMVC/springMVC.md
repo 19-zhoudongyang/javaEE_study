@@ -1,76 +1,78 @@
-#一、SpringMVC简介
+[toc]
+# 一、SpringMVC简介
    
-##(一)导入：什么是MVC：
+## (一)导入：什么是MVC：
 ![1](springMVC_pic/whatisMVC.PNG)
 
-##(二)什么是SpringMVC
+## (二)什么是SpringMVC
 ![1](springMVC_pic/whatisSpringMVC.PNG)
 
-##(三)SpringMVC的特点
+## (三)SpringMVC的特点
 ![1](springMVC_pic/CharacteristicOfSpringMVC.PNG)
 
-##(四)快速使用：
+## (四)快速使用：
 配置文件方式：
-###1.创建maven工程
+### 1.创建maven工程
 
-###2.导入依赖
+### 2.导入依赖
 
-###3.在src目录下的main包里创建webapp文件夹，并创建xml配置文件，添加springMVC的配置
+### 3.在src目录下的main包里创建webapp文件夹，并创建xml配置文件，添加springMVC的配置
 ![1](springMVC_pic/SpringMVCxmlconfigurationfile.PNG)
 
-###4.创建前端控制器DispatcherServlet配置文件，并在此文件里开启包扫描和配置视图解析器
+### 4.创建前端控制器DispatcherServlet配置文件，并在此文件里开启包扫描和配置视图解析器
 在springMVC的xml配置文件里指定其位置(也可不指定，则默认查找路径为WEB-INF文件夹下)
 ![1](springMVC_pic/DispatcherservletconfigurationfileofspringMVCfront-endcontroller.PNG)
 
-###5.在WEB-INF下创建视图解析器指定的路径文件夹，并创建html文件，在html标签内添加Thymeleaf的命名空间
+### 5.在WEB-INF下创建视图解析器指定的路径文件夹，并创建html文件，在html标签内添加Thymeleaf的命名空间
 ![1](springMVC_pic/AddthymeleafnamespaceonHTMLpage.PNG)
 
-###6.创建请求控制器：处理具体请求
+### 6.创建请求控制器：处理具体请求
 ![1](springMVC_pic/Createrequestcontroller_processspecificrequests.PNG)
 (1)创建一个Controller控制层类，并用注解@Controller注解标注
 (2)编写具体方法(控制器方法)并添加请求映射注解@RequestMapping(value="")，value值为浏览器输入的路径名称
 
-###7.编写前端页面，浏览器解析绝对路径需要使用Thymeleaf解析
+### 7.编写前端页面，浏览器解析绝对路径需要使用Thymeleaf解析
 ![1](springMVC_pic/%E7%BC%96%E5%86%99%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%EF%BC%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%A3%E6%9E%90%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8Thymeleaf%E8%A7%A3%E6%9E%90.PNG)
 
-###8.总结
+### 8.总结
 ![1](springMVC_pic/%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.PNG)
 
 
 注解方式：
-#二、基础功能
+# 二、基础功能
     
-##(一)注解开发：
-###1.注解：
-####(1)@RequestMapping
-#####{1}作用：
+## (一)注解开发：
+### 1.注解：
+#### (1)@RequestMapping
+##### {1}作用：
 ![1](springMVC_pic/%40RequestMapping%E6%B3%A8%E8%A7%A3%E7%9A%84%E4%BD%9C%E7%94%A8.PNG)
-#####{2}标注位置不同作用不同：![1](springMVC_pic/%40RequestMapping%E6%A0%87%E6%B3%A8%E4%BD%8D%E7%BD%AE%E4%B8%8D%E5%90%8C%E4%BD%9C%E7%94%A8%E4%B8%8D%E5%90%8C.PNG)
+##### {2}标注位置不同作用不同：
+![1](springMVC_pic/%40RequestMapping%E6%A0%87%E6%B3%A8%E4%BD%8D%E7%BD%AE%E4%B8%8D%E5%90%8C%E4%BD%9C%E7%94%A8%E4%B8%8D%E5%90%8C.PNG)
 
-#####{3}属性：
-######<1>value(使用@RequestMapping必须设置此属性)
-#######*1.请求路径，可以设置多个值，可以匹配多个请求地址吗，处理多个请求
-#######*2.支持ant风格路径：
+##### {3}属性：
+###### <1>value(使用@RequestMapping必须设置此属性)
+####### *1.请求路径，可以设置多个值，可以匹配多个请求地址吗，处理多个请求
+####### *2.支持ant风格路径：
 ![1](springMVC_pic/%40RequestMapping%E5%B1%9E%E6%80%A7value%E6%94%AF%E6%8C%81ant%E9%A3%8E%E6%A0%BC%E8%B7%AF%E5%BE%84.PNG)
-#######*3.支持占位符
+####### *3.支持占位符
 ![1](springMVC_pic/%40RequestMapping%E5%B1%9E%E6%80%A7value%E6%94%AF%E6%8C%81%E5%8D%A0%E4%BD%8D%E7%AC%A6.PNG)
 需要使用注解@PathVariable(value="")标注方法形参接收参数，如果不设置属性值，则默认为属性名；请求路径必须包含参数，否则404
 ![1](springMVC_pic/%40RequestMapping%E5%B1%9E%E6%80%A7value%E6%94%AF%E6%8C%81%E5%8D%A0%E4%BD%8D%E7%AC%A62.PNG)
 
-######<2>method
+###### <2>method
 设置请求方式，除了匹配value值(前提)，还要匹配请求方式，请求才能被控制器方法接收并处理；如果不设置，则表示可以请求所有请求方式
 ![1](springMVC_pic/%40RequestMapping%E5%B1%9E%E6%80%A7method%202.PNG)
 ![1](springMVC_pic/%40RequestMapping%E5%B1%9E%E6%80%A7method.PNG)
 
-######<3>params
+###### <3>params
 ![1](springMVC_pic/%40RequestMapping%E5%B1%9E%E6%80%A7params.PNG)
 
-######<4>headers
+###### <4>headers
 ![1](springMVC_pic/%40RequestMapping%E5%B1%9E%E6%80%A7headers.PNG)
-#####{4}派生注解：
+##### {4}派生注解：
 ![1](springMVC_pic/%40RequestMapping%E7%9A%84%E6%B4%BE%E7%94%9F%E6%B3%A8%E8%A7%A3.PNG)
 @RestController:标注在类上相当于为此类添加了@Controller注解，并为此类的每一个方法标注@ResponseBody注解
-#####{5}注意点：
+##### {5}注意点：
 [1]如果不同控制器类中@RequestMapping存在请求地址相同的情况，则报错
             (2)@RequestParam
                 详见本章第2.小节获取请求参数的第(2)小节：通过控制器形参自动获取参数第<1>小节
@@ -218,7 +220,7 @@
                 {4}返回值为错误页面的名称
                     ![1](springMVC_pic/%E6%B3%A8%E8%A7%A3%E6%96%B9%E5%BC%8F%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%99%A8.PNG)
 
-#三、RESTful
+# 三、RESTful
 	(一)简介：
         ![1](springMVC_pic/RESTFul%E7%AE%80%E4%BB%8B.PNG)
     (二)实现：
@@ -234,7 +236,7 @@
                 ![1](springMVC_pic/RESTFul%E7%9A%84%E5%88%A0%E9%99%A4%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B01.PNG)
                 ![1](springMVC_pic/RESTFul%E7%9A%84%E5%88%A0%E9%99%A4%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B02.PNG)
                 ![1](springMVC_pic/RESTFul%E7%9A%84%E5%88%A0%E9%99%A4%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B03.PNG)
-#四、注解配置SpringMVC(不使用web.xml和SpringMVC.xml)
+# 四、注解配置SpringMVC(不使用web.xml和SpringMVC.xml)
 	(一)创建初始化类，替代web.xml
             ![1](springMVC_pic/SpringMVC%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%911.PNG)
         1.创建初始化类，继承AbstractAnnotationConfigDispatcherServletInitializer父类
@@ -308,11 +310,11 @@
                 preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)方法中，返回false表示拦截，返回true表示放行，需要放行则返回true
             (2)配置类实现WebMvcConfigurer接口，并重写方法addInterceptors(InterceptorRegistry registry)
                 ![1](springMVC_pic/SpringMVC纯注解开发2-配置拦截器.PNG)
-#五、SpringMVC执行流程
+# 五、SpringMVC执行流程
     
 	(一)SpringMVC的常用组件
         ![1](springMVC_pic/SpringMVC的常用组件.PNG)
     (二)DispatcherServlet的初始化过程
         <!-- DispatcherServlet本质上是一个Servlet，所以天然遵循Servlet的生命周期，所以宏观上是Servlet生命周期来进行调度 -->
         
-#六、扩展功能
+# 六、扩展功能
