@@ -1,4 +1,4 @@
-[toc]
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 # 入门篇
 ## 概述
 >>![1](pic/01.PNG)
@@ -235,7 +235,14 @@
 >>>![1](pic/134.PNG)
 >>>![1](pic/135.PNG)
 >>>![1](pic/136.PNG)
-## 进程线程类
+## 进程管理类
+>>![1](pic/137.PNG)
+### ps 查看当前系统进程状态
+>>>![1](pic/137.PNG)
+>>>![1](pic/138.PNG)
+>>>![1](pic/139.PNG)
+>>>![1](pic/140.PNG)
+>>>![1](pic/141.PNG)
 # 扩展篇
 ## 软件包管理
 ## 克隆虚拟机
