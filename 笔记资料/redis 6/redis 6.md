@@ -53,6 +53,13 @@
 >>![1](pic/38.PNG)
 >>![1](pic/39.PNG)
 >>![1](pic/40.PNG)
+## Redis 集合(Set)
+>>![1](pic/41.PNG)
+>>![1](pic/42.PNG)
+## Redis 哈希(Hash)
+>>![1](pic/43.PNG)
+>>![1](pic/44.PNG)
+>>![1](pic/45.PNG)
 # 四、Redis6配置文件详解
 # 五、Redis6的发布和订阅
 # 六、Redis6新数据类型
