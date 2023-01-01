@@ -60,7 +60,58 @@
 >>![1](pic/43.PNG)
 >>![1](pic/44.PNG)
 >>![1](pic/45.PNG)
+## Redis有序集合Zset(sorted set)
+>>![1](pic/46.PNG)
+>>![1](pic/47.PNG)
+>>![1](pic/48.PNG)
+>>![1](pic/49.PNG)
 # 四、Redis6配置文件详解
+>![1](pic/50.PNG)
+## ###Units单位###
+>>![1](pic/51.PNG)
+## ###INCLUDES包含###
+>>![1](pic/52.PNG)
+## ###网络相关配置 ###
+### bind
+>>>![1](pic/53.PNG)
+>>>![1](pic/54.PNG)
+### protected-mode
+>>>![1](pic/55.PNG)
+>>>![1](pic/56.PNG)
+### Port
+>>>![1](pic/57.PNG)
+### tcp-backlog
+>>>![1](pic/58.PNG)
+### timeout
+>>>![1](pic/59.PNG)
+>>>![1](pic/60.PNG)
+### tcp-keepalive
+>>>![1](pic/61.PNG)
+## ###GENERAL通用###
+### daemonize
+>>>![1](pic/62.PNG)
+### pidfile
+>>>![1](pic/63.PNG)
+>>>![1](pic/64.PNG)
+### loglevel
+>>>![1](pic/65.PNG)
+### logfile
+>>>![1](pic/66.PNG)
+### databases 16
+>>>![1](pic/67.PNG)
+## ###SECURITY安全###
+### 设置密码
+>>>![1](pic/68.PNG)
+## #### LIMITS限制 ###
+### maxclients
+>>>![1](pic/69.PNG)
+>>>![1](pic/70.PNG)
+### maxmemory
+>>>![1](pic/71.PNG)
+### maxmemory-policy
+>>>![1](pic/72.PNG)
+### maxmemory-samples
+>>>![1](pic/73.PNG)
 # 五、Redis6的发布和订阅
 # 六、Redis6新数据类型
 # 七、Jedis操作Redis6
