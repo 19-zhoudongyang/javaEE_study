@@ -11,4 +11,5 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @EnableAspectJAutoProxy
 @Configuration
 @ComponentScan("com.zhou")
-public class config1 {}
+public class config1 {
+}

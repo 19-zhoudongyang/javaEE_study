@@ -24,7 +24,7 @@ public class MyTypeFilter implements TypeFilter {
         //获取当前类资源(类的路径)
         Resource resource = metadataReader.getResource();
         //如果类名包含"er",则对其进行扫描
-        if ("er".contains(className)){
+        if ("er".contains(className)) {
             return true;
         }
         return false;

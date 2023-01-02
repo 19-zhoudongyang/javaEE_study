@@ -31,30 +31,30 @@ public class FileUpAndDownController {
         //将流读取到数组中
         fileInputStream.read(bytes);
         //创建HttpHeaders对象设置响应头信息
-        MultiValueMap<String,String> headers = new HttpHeaders();
+        MultiValueMap<String, String> headers = new HttpHeaders();
         //设置要下载方式以及下载文件的名字
-        headers.add("Content-Disposition","attachment;filename=ResponseEntity实现文件下载.PNG");
+        headers.add("Content-Disposition", "attachment;filename=ResponseEntity实现文件下载.PNG");
         //设置响应状态码
         HttpStatus statusCode = HttpStatus.OK;
         //创建ResponseEntity对象
-        ResponseEntity<byte[]> responseEntity = new ResponseEntity<>(bytes,headers,statusCode);
+        ResponseEntity<byte[]> responseEntity = new ResponseEntity<>(bytes, headers, statusCode);
         //关闭输入流
         fileInputStream.close();
         return responseEntity;
     }
 
     @RequestMapping("/testUp")
-    public String testResponseEntityUp(MultipartFile photo,HttpSession session) throws IOException {
+    public String testResponseEntityUp(MultipartFile photo, HttpSession session) throws IOException {
         //获取标签栏中的name值
         System.out.println(photo.getName());
         //获取文件名
         String filename = photo.getOriginalFilename();
-        System.out.println("文件名："+filename);
+        System.out.println("文件名：" + filename);
         //获取文件的后缀名
         String suffixName = filename.substring(filename.lastIndexOf("."));
         //将UUID作为文件名
         //replaceAll("-","")将横线换为空字符串
-        String uuid = UUID.randomUUID().toString().replaceAll("-","");
+        String uuid = UUID.randomUUID().toString().replaceAll("-", "");
         //将UUID和后缀名拼接的结果作为最终的文件名.防止同名文件覆盖掉原文件
         filename = uuid + suffixName;
         //通过session获取ServletContext
@@ -64,7 +64,7 @@ public class FileUpAndDownController {
         //读取目录
         File file = new File(photoPath);
         //判断目录是否存在
-        if (!file.exists()){
+        if (!file.exists()) {
             //若不存在，则创建目录
             boolean mkdir = file.mkdir();
             System.out.println(mkdir);

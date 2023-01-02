@@ -10,7 +10,7 @@ import java.io.InputStream;
 
 public class SqlSessionUtils {
     //自动提交事务
-    public static SqlSession getSqlSession(boolean autoCommit){
+    public static SqlSession getSqlSession(boolean autoCommit) {
         InputStream is = null;
         SqlSessionFactoryBuilder factoryBuilder = null;
         SqlSessionFactory sessionFactory = null;
@@ -41,7 +41,7 @@ public class SqlSessionUtils {
     }
 
     //默认构造器为不自动提交事务
-    public static SqlSession getSqlSession(){
+    public static SqlSession getSqlSession() {
         InputStream is = null;
         SqlSessionFactoryBuilder factoryBuilder = null;
         SqlSessionFactory sessionFactory = null;

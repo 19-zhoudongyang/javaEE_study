@@ -2,7 +2,9 @@ package com.zhou.mybatis.mappers;
 
 import com.zhou.mybatis.pojo.Dept;
 import com.zhou.mybatis.pojo.DeptExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface DeptMapper {

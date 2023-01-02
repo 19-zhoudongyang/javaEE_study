@@ -18,7 +18,7 @@
     <select id="getUserByTableName" resultType="User">
         select * from ${tableName};
     </select>
-    
+
     <!-- void insertUser(User user);-->
     <!--useGeneratedKeys=“true”     keyProperty=“id”
             useGeneratedKeys设置为 true 时，

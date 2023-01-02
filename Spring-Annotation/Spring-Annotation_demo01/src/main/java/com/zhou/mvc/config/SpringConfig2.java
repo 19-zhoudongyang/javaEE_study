@@ -18,11 +18,12 @@ public class SpringConfig2 {
     @Conditional({LinuxConditional.class})
     @Scope("session")
     @Bean
-    public Person person(){
-        return new Person("zhou",33);
+    public Person person() {
+        return new Person("zhou", 33);
     }
+
     @Bean
-    public MyFactoryBean myFactoryBean(){
+    public MyFactoryBean myFactoryBean() {
         return new MyFactoryBean();
     }
 //    @Bean(initMethod = "init",destroyMethod = "destroy")

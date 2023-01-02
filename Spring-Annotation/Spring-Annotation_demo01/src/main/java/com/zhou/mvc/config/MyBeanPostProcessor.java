@@ -12,6 +12,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
         System.out.println("初始化之前");
         return bean;
     }
+
     //初始化完毕后调用
     @Override
     public Object postProcessAfterInitialization(/*初始化的实例*/Object bean, String beanName) throws BeansException {

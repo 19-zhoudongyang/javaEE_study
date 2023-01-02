@@ -7,7 +7,7 @@ import javax.servlet.annotation.HandlesTypes;
 import java.util.Set;
 
 
-@HandlesTypes(value={HelloService.class})
+@HandlesTypes(value = {HelloService.class})
 /*
 注解作用
     容器启动时会将@HandlesTypes指定的这个类型及其子类型(子接口、实现类等)传递到方法onStartup的set集合里

@@ -31,11 +31,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public PageInfo<Employee> getEmployeePage(Integer pageNum) {
         //开启分页功能
-        PageHelper.startPage(pageNum,4);
+        PageHelper.startPage(pageNum, 4);
         //查询所有的员工信息
         List<Employee> employees = employeeMapper.getAllEmployee();
         //获取分页相关数据
-        PageInfo<Employee> pageInfo = new PageInfo<>(employees,5);
+        PageInfo<Employee> pageInfo = new PageInfo<>(employees, 5);
         return pageInfo;
     }
 }

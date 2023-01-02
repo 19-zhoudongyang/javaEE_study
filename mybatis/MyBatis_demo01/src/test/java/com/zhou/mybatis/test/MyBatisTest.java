@@ -37,7 +37,7 @@ public class MyBatisTest {
         //提交事务
         //sqlSession.commit();
         //打印结果
-        System.out.println("结果："+result);
+        System.out.println("结果：" + result);
     }
 
     //测试updateUser

@@ -42,6 +42,6 @@
         开启事务的注解驱动
         将使用注解@Transactional标识的方法或类中所有的方法进行事务管理
     -->
-    <tx:annotation-driven transaction-manager="transactionManager" />
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 
 </beans>

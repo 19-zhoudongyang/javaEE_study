@@ -30,7 +30,6 @@ public class Dept {
      * This method returns the value of the database column t_dept.did
      *
      * @return the value of t_dept.did
-     *
      * @mbggenerated Tue Sep 13 15:35:36 CST 2022
      */
     public Integer getDid() {
@@ -42,7 +41,6 @@ public class Dept {
      * This method sets the value of the database column t_dept.did
      *
      * @param did the value for t_dept.did
-     *
      * @mbggenerated Tue Sep 13 15:35:36 CST 2022
      */
     public void setDid(Integer did) {
@@ -54,7 +52,6 @@ public class Dept {
      * This method returns the value of the database column t_dept.dept_name
      *
      * @return the value of t_dept.dept_name
-     *
      * @mbggenerated Tue Sep 13 15:35:36 CST 2022
      */
     public String getDeptName() {
@@ -66,7 +63,6 @@ public class Dept {
      * This method sets the value of the database column t_dept.dept_name
      *
      * @param deptName the value for t_dept.dept_name
-     *
      * @mbggenerated Tue Sep 13 15:35:36 CST 2022
      */
     public void setDeptName(String deptName) {

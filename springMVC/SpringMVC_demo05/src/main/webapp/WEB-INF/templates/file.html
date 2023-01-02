@@ -5,11 +5,11 @@
     <title>测试文件上传和下载</title>
 </head>
 <body>
-    <a th:href="@{/testDown}">下载图片</a>
-    <!-- enctype="multipart/form-data"设置文件解析器，使用二进制的方式上传  -->
-    <form th:action="@{/testUp}" method="post" enctype="multipart/form-data">
-        头像：<input type="file" name="photo"><br>
-        <input type="submit"value="上传">
-    </form>
+<a th:href="@{/testDown}">下载图片</a>
+<!-- enctype="multipart/form-data"设置文件解析器，使用二进制的方式上传  -->
+<form th:action="@{/testUp}" method="post" enctype="multipart/form-data">
+    头像：<input type="file" name="photo"><br>
+    <input type="submit" value="上传">
+</form>
 </body>
 </html>

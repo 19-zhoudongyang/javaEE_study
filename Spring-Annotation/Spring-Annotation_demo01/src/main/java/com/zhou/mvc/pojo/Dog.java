@@ -11,6 +11,7 @@ public class Dog {
     private int age;
     @Value("${dog.nickname}")
     private String nickname;
+
     public Dog() {
     }
 

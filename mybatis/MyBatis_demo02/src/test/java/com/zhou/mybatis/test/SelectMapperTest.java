@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class SelectMapperTest {
     @Test
-    public void testGetUserById(){
+    public void testGetUserById() {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession(true);
         SelectMapper mapper = sqlSession.getMapper(SelectMapper.class);
         User user = mapper.getUserById(5);
@@ -20,7 +20,7 @@ public class SelectMapperTest {
     }
 
     @Test
-    public void testGetAllUser(){
+    public void testGetAllUser() {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession(true);
         SelectMapper mapper = sqlSession.getMapper(SelectMapper.class);
         List<User> allUser = mapper.getAllUser();
@@ -28,14 +28,14 @@ public class SelectMapperTest {
     }
 
     @Test
-    public void testGetCount(){
+    public void testGetCount() {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession(true);
         SelectMapper mapper = sqlSession.getMapper(SelectMapper.class);
         System.out.println(mapper.getCount());
     }
 
     @Test
-    public void testGetUserByIdToMap(){
+    public void testGetUserByIdToMap() {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession(true);
         SelectMapper mapper = sqlSession.getMapper(SelectMapper.class);
         Map<String, Object> map = mapper.getUserByIdToMap(5);
@@ -43,7 +43,7 @@ public class SelectMapperTest {
     }
 
     @Test
-    public void testGetAllUserToMap(){
+    public void testGetAllUserToMap() {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession(true);
         SelectMapper mapper = sqlSession.getMapper(SelectMapper.class);
         Map<String, Object> maps = mapper.getAllUserToMap();

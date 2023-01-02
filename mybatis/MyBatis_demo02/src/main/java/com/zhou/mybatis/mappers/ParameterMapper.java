@@ -14,12 +14,12 @@ public interface ParameterMapper {
     /*
     根据id和username查询用户信息
      */
-    User selectUserByIdAndUsername(int id,String username);
+    User selectUserByIdAndUsername(int id, String username);
 
     /*
     验证登录
      */
-    User checkLoginByMap(Map<String,Object> map);
+    User checkLoginByMap(Map<String, Object> map);
 
     /*
     添加用户信息

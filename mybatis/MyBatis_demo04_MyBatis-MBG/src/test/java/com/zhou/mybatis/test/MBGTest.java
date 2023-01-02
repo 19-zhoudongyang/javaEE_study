@@ -16,8 +16,8 @@ import java.util.List;
 public class MBGTest {
 
     @Test
-    public void testMBG(){
-        try{
+    public void testMBG() {
+        try {
             InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
             SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -34,9 +34,9 @@ public class MBGTest {
             emps.forEach(emp -> System.out.println(emp));*/
 
             //选择性修改
-            mapper.updateByPrimaryKeySelective(new Emp(1,"admin",22,null,"19099@qq.com",3));
+            mapper.updateByPrimaryKeySelective(new Emp(1, "admin", 22, null, "19099@qq.com", 3));
 
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

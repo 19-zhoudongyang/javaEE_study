@@ -16,7 +16,7 @@
     <select id="checkLoginByMap" resultType="User">
         select * from t_user WHERE id = #{id} and username=#{username}
     </select>
-    
+
     <!--int insertUser(User user)-->
     <insert id="insertUser">
         insert into t_user values(null,#{username},#{password},#{age},#{sex},#{email})

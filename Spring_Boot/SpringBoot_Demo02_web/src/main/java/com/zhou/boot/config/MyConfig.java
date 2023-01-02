@@ -23,7 +23,7 @@ import java.util.List;
 public class MyConfig {
 
     @Bean
-    public WebMvcConfigurer webMvcConfigurer(){
+    public WebMvcConfigurer webMvcConfigurer() {
         return new WebMvcConfigurer() {
             @Override
             public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
@@ -38,11 +38,11 @@ public class MyConfig {
             public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
                 HashMap<String, MediaType> hashMap = new HashMap<>();
                 //指定支持解析哪些参数对应的媒体类型
-                hashMap.put("json",MediaType.APPLICATION_JSON);
-                hashMap.put("xml",MediaType.APPLICATION_XML);
+                hashMap.put("json", MediaType.APPLICATION_JSON);
+                hashMap.put("xml", MediaType.APPLICATION_XML);
 
                 //浏览器参数format=gg
-                hashMap.put("gg",MediaType.parseMediaType("application/zhou"));
+                hashMap.put("gg", MediaType.parseMediaType("application/zhou"));
 
                 //参数方式
                 ParameterContentNegotiationStrategy strategy1 = new ParameterContentNegotiationStrategy(hashMap);
@@ -51,7 +51,7 @@ public class MyConfig {
 
                 //请求头方式
                 HeaderContentNegotiationStrategy strategy2 = new HeaderContentNegotiationStrategy();
-                configurer.strategies(Arrays.asList(strategy1,strategy2));
+                configurer.strategies(Arrays.asList(strategy1, strategy2));
             }
         };
     }

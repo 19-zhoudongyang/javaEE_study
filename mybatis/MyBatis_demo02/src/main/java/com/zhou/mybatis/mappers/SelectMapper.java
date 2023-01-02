@@ -26,12 +26,12 @@ public interface SelectMapper {
     /*
     根据id查询用户信息为一个map集合
      */
-    Map<String,Object> getUserByIdToMap(@Param("id")Integer id);
+    Map<String, Object> getUserByIdToMap(@Param("id") Integer id);
 
     /*
     查询所有用户信息为一个map集合
      */
     @MapKey("id")
-    Map<String,Object> getAllUserToMap();
+    Map<String, Object> getAllUserToMap();
 
 }

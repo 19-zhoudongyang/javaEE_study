@@ -31,12 +31,12 @@
         <filter-name>CharacterEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
         <!--设置编码 -->
-            <!--设置请求的编码-->
+        <!--设置请求的编码-->
         <init-param>
             <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>
         </init-param>
-            <!--设置响应的编码-->
+        <!--设置响应的编码-->
         <init-param>
             <param-name>forceResponseEncoding</param-name>
             <param-value>true</param-value>

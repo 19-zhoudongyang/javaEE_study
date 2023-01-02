@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class TestDemo2 {
     @Test
-    public void testAop(){
+    public void testAop() {
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(config1.class);
         String[] beanDefinitionNames = annotationConfigApplicationContext.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {

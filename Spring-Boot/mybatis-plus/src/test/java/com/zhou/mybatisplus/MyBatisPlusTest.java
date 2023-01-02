@@ -15,7 +15,7 @@ public class MyBatisPlusTest {
     private UserMapper userMapper;
 
     @Test
-    public void testSelectList(){
+    public void testSelectList() {
         //通过条件构造器查询一个list集合，若没有条件，则可以设置null为参数
         List<User> users = userMapper.selectList(null);
         users.forEach(user -> System.out.println(user));
@@ -30,9 +30,9 @@ public class MyBatisPlusTest {
 //    }
 
     @Test
-    public void testDeleteById(){
+    public void testDeleteById() {
         int result = userMapper.deleteById(1575383239586136066L);
-        System.out.println("受影响的行数："+result);
+        System.out.println("受影响的行数：" + result);
 
     }
 }

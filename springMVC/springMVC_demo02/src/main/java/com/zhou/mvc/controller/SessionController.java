@@ -9,8 +9,8 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class SessionController {
     @RequestMapping("/testSessionController")
-    public String testSessionController(HttpSession session){
-        session.setAttribute("test","hello,Session");
+    public String testSessionController(HttpSession session) {
+        session.setAttribute("test", "hello,Session");
         return "success";
     }
 }

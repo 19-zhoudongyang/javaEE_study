@@ -10,7 +10,7 @@ public class TestMain {
         //ioc根据类型自动装配
         Person bean = applicationContext.getBean(Person.class);
         //ioc根据名称实现装配，名称默认为配置类里对应的方法名
-        Person person =(Person) applicationContext.getBean("person");
+        Person person = (Person) applicationContext.getBean("person");
         System.out.println(bean);
         System.out.println(person);
     }

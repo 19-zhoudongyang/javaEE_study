@@ -13,7 +13,7 @@
     <!--设置类型别名-->
     <typeAliases>
         <!--不设置alias则默认别名为类名且不区分大小写-->
-<!--        <typeAlias type="" alias=""></typeAlias>-->
+        <!--        <typeAlias type="" alias=""></typeAlias>-->
         <!--为包下所有的类起别名，默认别名为类名且不区分大小写-->
         <package name="com.zhou.ssm.pojo"/>
     </typeAliases>

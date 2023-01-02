@@ -7,7 +7,7 @@
     <select id="getUserById" resultType="User">
         select * from t_user where id = #{id}
     </select>
-    
+
     <!--List<User> getAllUser()-->
     <select id="getAllUser" resultType="User">
         select * from t_user

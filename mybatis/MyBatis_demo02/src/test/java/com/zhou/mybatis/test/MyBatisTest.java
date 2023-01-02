@@ -11,33 +11,34 @@ import java.util.HashMap;
 public class MyBatisTest {
 
     @Test
-    public void testSelectUserById(){
+    public void testSelectUserById() {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession(true);
         ParameterMapper mapper = sqlSession.getMapper(ParameterMapper.class);
         User user = mapper.selectUserById(4);
         System.out.println(user);
     }
+
     @Test
-    public void testSelectUserByIdAndUsername(){
+    public void testSelectUserByIdAndUsername() {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession();
         ParameterMapper mapper = sqlSession.getMapper(ParameterMapper.class);
-        User user = mapper.selectUserByIdAndUsername(4,"admin");
+        User user = mapper.selectUserByIdAndUsername(4, "admin");
         System.out.println(user);
     }
 
     @Test
-    public void testCheckLoginByMap(){
+    public void testCheckLoginByMap() {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession();
         ParameterMapper mapper = sqlSession.getMapper(ParameterMapper.class);
         HashMap<String, Object> map = new HashMap<>();
-        map.put("id",4);
-        map.put("username","admin");
+        map.put("id", 4);
+        map.put("username", "admin");
         User user = mapper.checkLoginByMap(map);
         System.out.println(user);
     }
 
     @Test
-    public void testInsertUser(){
+    public void testInsertUser() {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession(true);
         ParameterMapper mapper = sqlSession.getMapper(ParameterMapper.class);
         User user = new User(null, "李四", "123456", 23, "男", "123456789@qq.com");
@@ -46,7 +47,7 @@ public class MyBatisTest {
     }
 
     @Test
-    public void testCheckLoginByParam(){
+    public void testCheckLoginByParam() {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession(true);
         ParameterMapper mapper = sqlSession.getMapper(ParameterMapper.class);
         User user = mapper.checkLoginByParam("李四", "123456");

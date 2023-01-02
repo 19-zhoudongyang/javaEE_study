@@ -9,9 +9,10 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class ApplicationController {
     @RequestMapping("/testApplicationController")
-    public String testApplicationController(HttpSession session){
+    public String testApplicationController(HttpSession session) {
         ServletContext servletContext = session.getServletContext();
-        servletContext.setAttribute("test","hello,Session");;
+        servletContext.setAttribute("test", "hello,Session");
+        ;
         return "success";
     }
 }

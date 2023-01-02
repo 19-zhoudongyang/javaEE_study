@@ -11,7 +11,7 @@ public class HelloController {
 
     @ResponseBody
     @RequestMapping("/test/user")
-    public User user(){
+    public User user() {
         User user = new User();
         user.setAge(28);
         user.setName("lisi");

@@ -30,6 +30,7 @@ public class ZhouMessageConverter implements HttpMessageConverter<User> {
     /**
      * 服务器要统计所有MessageConverter都能写出哪些内容类型
      * application/zhou
+     *
      * @return
      */
     @Override
@@ -45,7 +46,7 @@ public class ZhouMessageConverter implements HttpMessageConverter<User> {
     @Override
     public void write(User user, MediaType contentType, HttpOutputMessage outputMessage) throws IOException, HttpMessageNotWritableException {
         //自定义协议数据的写出
-        String data = user.getName()+";"+user.getAge();
+        String data = user.getName() + ";" + user.getAge();
 
         //写出去
         OutputStream body = outputMessage.getBody();

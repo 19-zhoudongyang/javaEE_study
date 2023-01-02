@@ -13,13 +13,13 @@ import org.springframework.stereotype.Service;
 @Configuration
 @ComponentScan(
         value = "com.zhou.mvc",
-        excludeFilters = {@Filter(type = FilterType.ANNOTATION,classes = Controller.class)},
-        includeFilters={@Filter(type = FilterType.ANNOTATION,classes = Repository.class),
-                        @Filter(type = FilterType.CUSTOM,classes = MyTypeFilter.class)},
+        excludeFilters = {@Filter(type = FilterType.ANNOTATION, classes = Controller.class)},
+        includeFilters = {@Filter(type = FilterType.ANNOTATION, classes = Repository.class),
+                @Filter(type = FilterType.CUSTOM, classes = MyTypeFilter.class)},
         useDefaultFilters = false)
 public class SpringConfig {
     @Bean
-    public Person person(){
-        return new Person("zhou",22);
+    public Person person() {
+        return new Person("zhou", 22);
     }
 }

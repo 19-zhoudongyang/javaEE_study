@@ -24,23 +24,23 @@ public class PageHelperTest {
      * index=(pageNum-1)*pageSize
      */
     @Test
-    public void testPageHelper(){
-        try{
+    public void testPageHelper() {
+        try {
             InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
             SqlSession sqlSession = sqlSessionFactory.openSession(true);
             EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
             //开启分页功能
-            PageHelper.startPage(2,4);
+            PageHelper.startPage(2, 4);
 
             List<Emp> emps = mapper.selectByExample(null);
             //navigatePages:显示导航分页的个数
-            PageInfo<Emp> pageInfo = new PageInfo<>(emps,5);
+            PageInfo<Emp> pageInfo = new PageInfo<>(emps, 5);
             System.out.println(pageInfo);
 
             //emps.forEach(emp -> System.out.println(emp));
 
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

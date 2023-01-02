@@ -14,7 +14,7 @@ import java.util.Map;
 public class ResultMapTest {
 
     @Test
-    public void testGetAllEmp(){
+    public void testGetAllEmp() {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession(true);
         EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
         List<Emp> allEmp = mapper.getAllEmp();
@@ -22,7 +22,7 @@ public class ResultMapTest {
     }
 
     @Test
-    public void testGetEmpAndDept(){
+    public void testGetEmpAndDept() {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession(true);
         EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
         Emp empAndDept = mapper.getEmpAndDept(1);
@@ -30,7 +30,7 @@ public class ResultMapTest {
     }
 
     @Test
-    public void testGetEmpAndDeptByStep(){
+    public void testGetEmpAndDeptByStep() {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession(true);
         EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
         Emp empAndDeptByStep = mapper.getEmpAndDeptByStepOne(1);
@@ -38,7 +38,7 @@ public class ResultMapTest {
     }
 
     @Test
-    public void testGetDeptAndEmpResultMap(){
+    public void testGetDeptAndEmpResultMap() {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession(true);
         DeptMapper mapper = sqlSession.getMapper(DeptMapper.class);
         Dept deptAndEmp = mapper.getDeptAndEmp(2);

@@ -30,21 +30,21 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    @RequestMapping(value = "/employees",method = RequestMethod.GET)
-    public String getAllEmployee(Model model){
+    @RequestMapping(value = "/employees", method = RequestMethod.GET)
+    public String getAllEmployee(Model model) {
         //查询所有的员工信息
         List<Employee> employees = employeeService.getAllEmployee();
         //将员工信息在请求域中共享
-        model.addAttribute("employees",employees);
+        model.addAttribute("employees", employees);
         //跳转到employees.html
         return "employees";
     }
 
-    @RequestMapping(value = "/employees/page/{pageNum}",method = RequestMethod.GET)
-    public String getEmployeePage(@PathVariable("pageNum") Integer pageNum,Model model){
+    @RequestMapping(value = "/employees/page/{pageNum}", method = RequestMethod.GET)
+    public String getEmployeePage(@PathVariable("pageNum") Integer pageNum, Model model) {
         PageInfo<Employee> page = employeeService.getEmployeePage(pageNum);
         //将分页数据共享到请求域中
-        model.addAttribute("page",page);
+        model.addAttribute("page", page);
         return "employees";
     }
 

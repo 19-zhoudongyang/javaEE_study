@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ViewController {
 
     @GetMapping("/zhou")
-    public String zhou(Model model){
-        model.addAttribute("msg","hello");
-        model.addAttribute("link","http://www.baidu.com");
+    public String zhou(Model model) {
+        model.addAttribute("msg", "hello");
+        model.addAttribute("link", "http://www.baidu.com");
         return "success";
     }
 

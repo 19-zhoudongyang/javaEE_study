@@ -9,6 +9,7 @@ import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
+
 @PropertySource("classpath:/dbconfig.properties")
 @Configuration
 public class SpringConfig3_Profile {
@@ -18,6 +19,7 @@ public class SpringConfig3_Profile {
     private String password;
     @Value("${db.driverClass}")
     private String driverClass;
+
     //测试数据源
     @Profile("test")
     @Bean("testDataSource")
@@ -29,6 +31,7 @@ public class SpringConfig3_Profile {
         comboPooledDataSource.setDriverClass(driverClass);
         return comboPooledDataSource;
     }
+
     //开发数据源
     @Profile("dev")
     @Bean("devDataSource")
@@ -40,6 +43,7 @@ public class SpringConfig3_Profile {
         comboPooledDataSource.setDriverClass(driverClass);
         return comboPooledDataSource;
     }
+
     //生产数据源
     @Profile("prod")
     @Bean("prodDataSource")

@@ -38,17 +38,18 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //注册拦截器
-            /** addPathPatterns()设置需要拦截的请求
-             *    /*代表拦截所有请求(只有一层目录匹配)，
-             *    /**代表拦截所有请求(多层目录也可匹配)
-            */
-            /** excludePathPatterns设置不需要拦截的请求，
-             *    /代表不拦截路径为/的请求
-            */
+        /** addPathPatterns()设置需要拦截的请求
+         *    /*代表拦截所有请求(只有一层目录匹配)，
+         *    /**代表拦截所有请求(多层目录也可匹配)
+         */
+        /** excludePathPatterns设置不需要拦截的请求，
+         *    /代表不拦截路径为/的请求
+         */
         registry.addInterceptor(new TestInterceptor()).addPathPatterns("/**").excludePathPatterns("/");
     }
 
     //view-contorller(视图控制器)
+
     /**
      * addViewController("/")表示路径为/
      * setViewName("index")表示视图名为index
@@ -60,7 +61,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     //配置文件上传解析器
     @Bean
-    public MultipartResolver multipartResolver(){
+    public MultipartResolver multipartResolver() {
         CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
         return commonsMultipartResolver;
     }
@@ -71,7 +72,7 @@ public class WebConfig implements WebMvcConfigurer {
         SimpleMappingExceptionResolver simpleMappingExceptionResolver = new SimpleMappingExceptionResolver();
         Properties properties = new Properties();
         //设置要捕获的异常类型和渲染的页面
-        properties.setProperty("java.lang.ArithmeticException","error");
+        properties.setProperty("java.lang.ArithmeticException", "error");
         simpleMappingExceptionResolver.setExceptionMappings(properties);
         //将异常信息保存到请求域中,key为ex
         simpleMappingExceptionResolver.setExceptionAttribute("ex");
@@ -82,7 +83,7 @@ public class WebConfig implements WebMvcConfigurer {
     //配置视图解析器
     //配置生成模板解析器
     @Bean
-    public ITemplateResolver templateResolver(){
+    public ITemplateResolver templateResolver() {
         WebApplicationContext currentWebApplicationContext = ContextLoader.getCurrentWebApplicationContext();
         ServletContextTemplateResolver servletContextTemplateResolver = new ServletContextTemplateResolver(currentWebApplicationContext.getServletContext());
         servletContextTemplateResolver.setPrefix("/WEB-INF/templates/");
@@ -91,16 +92,18 @@ public class WebConfig implements WebMvcConfigurer {
         servletContextTemplateResolver.setTemplateMode(TemplateMode.HTML);
         return servletContextTemplateResolver;
     }
+
     //生成模板引擎并为模板引擎注入模板解析器
     @Bean
-    public SpringTemplateEngine templateEngine(ITemplateResolver templateResolver){
+    public SpringTemplateEngine templateEngine(ITemplateResolver templateResolver) {
         SpringTemplateEngine springTemplateEngine = new SpringTemplateEngine();
         springTemplateEngine.setTemplateResolver(templateResolver);
         return springTemplateEngine;
     }
+
     //生成视图解析器并为解析器注入模板引擎
     @Bean
-    public ViewResolver viewResolver(SpringTemplateEngine springTemplateEngine){
+    public ViewResolver viewResolver(SpringTemplateEngine springTemplateEngine) {
         ThymeleafViewResolver thymeleafViewResolver = new ThymeleafViewResolver();
         thymeleafViewResolver.setCharacterEncoding("UTF-8");
         thymeleafViewResolver.setTemplateEngine(springTemplateEngine);

@@ -25,7 +25,7 @@ public class LinuxConditional implements Condition {
         BeanDefinitionRegistry registry = context.getRegistry();
         //获取系统名
         String property = environment.getProperty("os.name");
-        if (property.contains("linux")){
+        if (property.contains("linux")) {
             return true;
         }
         return false;

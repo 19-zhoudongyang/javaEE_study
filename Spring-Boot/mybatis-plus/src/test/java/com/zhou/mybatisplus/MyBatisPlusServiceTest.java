@@ -14,7 +14,7 @@ public class MyBatisPlusServiceTest {
     @Test
     public void testGetCount() {
         long count = userService.count();
-        System.out.println("总记录数："+count);
+        System.out.println("总记录数：" + count);
     }
 
 }

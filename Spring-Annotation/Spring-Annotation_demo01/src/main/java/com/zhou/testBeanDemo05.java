@@ -14,6 +14,7 @@ public class testBeanDemo05 {
     public void Init() {
         System.out.println("初始化demo05。。。。。。。。。。。。。。。。");
     }
+
     @PreDestroy
     public void destroy() {
         System.out.println("销毁demo05.....");

@@ -7,10 +7,10 @@
     <properties resource="mysql.properties"/>
 
     <!--设置MyBatis的全局配置-->
-<!--    <settings>-->
-<!--        &lt;!&ndash;将下划线_自动映射为驼峰命名规则,emp_name==>empName &ndash;&gt;-->
-<!--        <setting name="mapUnderscoreToCamelCase" value="true"/>-->
-<!--    </settings>-->
+    <!--    <settings>-->
+    <!--        &lt;!&ndash;将下划线_自动映射为驼峰命名规则,emp_name==>empName &ndash;&gt;-->
+    <!--        <setting name="mapUnderscoreToCamelCase" value="true"/>-->
+    <!--    </settings>-->
 
     <!--设置类型别名-->
     <typeAliases>

@@ -63,15 +63,15 @@
     <!--    int deleteMoreByArray(Integer[] eids);-->
     <delete id="deleteMoreByArray">
         delete from t_emp where eid in
-            /**
-            *collection填写数组或集合名
-            *item填写数组或集合中的每一条数据
-            *separator填写分隔符
-            *open填写以什么开始(foreach前添加内容)
-            *close填写以什么结束(foreach后添加内容)
-            */
+        /**
+        *collection填写数组或集合名
+        *item填写数组或集合中的每一条数据
+        *separator填写分隔符
+        *open填写以什么开始(foreach前添加内容)
+        *close填写以什么结束(foreach后添加内容)
+        */
         <foreach collection="eids" item="eid" separator="," open="(" close=")">
-                #{eid}
+            #{eid}
         </foreach>
     </delete>
 

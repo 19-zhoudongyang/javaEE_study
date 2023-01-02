@@ -31,6 +31,7 @@ public class config {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(datasource());
         return jdbcTemplate;
     }
+
     @Bean
     public PlatformTransactionManager platformTransactionManager() throws PropertyVetoException {
         return new DataSourceTransactionManager(datasource());

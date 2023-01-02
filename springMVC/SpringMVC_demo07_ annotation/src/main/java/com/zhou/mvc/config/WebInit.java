@@ -31,6 +31,6 @@ public class WebInit extends AbstractAnnotationConfigDispatcherServletInitialize
         characterEncodingFilter.setForceResponseEncoding(true);
         //配置处理请求方式put和delete的HiddenHttpMethodFilter
         HiddenHttpMethodFilter hiddenHttpMethodFilter = new HiddenHttpMethodFilter();
-        return new Filter[]{characterEncodingFilter,hiddenHttpMethodFilter};
+        return new Filter[]{characterEncodingFilter, hiddenHttpMethodFilter};
     }
 }

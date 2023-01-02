@@ -23,9 +23,9 @@
     </select>
 
     <!-- List<Emp> getAllEmp();-->
-<!--    <select id="getAllEmp" resultType="Emp">-->
-<!--        select * from t_emp-->
-<!--    </select>-->
+    <!--    <select id="getAllEmp" resultType="Emp">-->
+    <!--        select * from t_emp-->
+    <!--    </select>-->
 
     <!--级联赋值处理多对一映射关系-->
     <resultMap id="empAndDeptResultMapOne" type="Emp">
@@ -69,7 +69,8 @@
         <result property="age" column="age"></result>
         <result property="sex" column="sex"></result>
         <result property="email" column="email"></result>
-        <association property="dept" select="com.zhou.mybatis.mappers.DeptMapper.getEmpAndDeptByStepTwo" column="did"></association>
+        <association property="dept" select="com.zhou.mybatis.mappers.DeptMapper.getEmpAndDeptByStepTwo"
+                     column="did"></association>
     </resultMap>
     <!--Emp getEmpAndDeptByStepOne();-->
     <select id="getEmpAndDeptByStepOne" resultMap="empAndDeptByStepResultMap">

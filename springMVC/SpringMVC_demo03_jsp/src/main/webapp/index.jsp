@@ -11,8 +11,8 @@
     <title>首页</title>
 </head>
 <body>
-    <%--pageContext:最小域对象--%>
-    <%--${pageContext.request.contextPath}--%>
-    <a href="${pageContext.request.contextPath}/success">success.jsp</a>
+<%--pageContext:最小域对象--%>
+<%--${pageContext.request.contextPath}--%>
+<a href="${pageContext.request.contextPath}/success">success.jsp</a>
 </body>
 </html>
