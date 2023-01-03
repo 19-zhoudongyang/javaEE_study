@@ -366,7 +366,53 @@
 ### Redis_事务_秒杀案例_代码
 >>>![1](/pic/123.PNG)
 >>>![1](/pic/124.PNG)
-# 十、Redis6持久化之RDB))
+# 十、Redis6持久化之RDB
+## 总体介绍
+>>![1](/pic/125.PNG)
+>>![1](/pic/126.PNG)
+## RDB（Redis DataBase）
+### 官网介绍
+>>>![1](/pic/127.PNG)
+### 是什么
+>>>![1](/pic/128.PNG)
+### 备份是如何执行的
+>>>![1](/pic/129.PNG)
+### Fork
+>>>![1](/pic/130.PNG)
+### RDB持久化流程
+>>>![1](/pic/131.PNG)
+### dump.rdb文件
+>>>![1](/pic/132.PNG)
+>>>![1](/pic/133.PNG)
+### 配置位置
+>>>![1](/pic/134.PNG)
+### 如何触发RDB快照；保持策略
+#### 配置文件中默认的快照配置
+>>>>![1](/pic/135.PNG)
+#### 命令save VS bgsave
+>>>>![1](/pic/136.PNG)
+#### flushall命令
+>>>>![1](/pic/137.PNG)
+#### ###SNAPSHOTTING快照###
+#### Save
+>>>>![1](/pic/138.PNG)
+#### stop-writes-on-bgsave-error
+>>>>![1](/pic/139.PNG)
+#### rdbcompression 压缩文件
+>>>>![1](/pic/140.PNG)
+#### rdbchecksum 检查完整性
+>>>>![1](/pic/141.PNG)
+#### rdb的备份
+>>>>![1](/pic/142.PNG)
+### 优势
+>>>![1](/pic/143.PNG)
+>>>![1](/pic/144.PNG)
+### 劣势
+>>>![1](/pic/145.PNG)
+### 如何停止
+>>>![1](/pic/146.PNG)
+### 小总结
+>>>![1](/pic/147.PNG)
 # 十一、Redis6持久化之AOF
 # 十二、Redis6的主从复制
 # 十三、Redis6集群
