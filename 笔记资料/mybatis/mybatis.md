@@ -1,8 +1,29 @@
-#一、简介
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [一、简介](#一简介)
+- [二、和其他持久层技术对比](#二和其他持久层技术对比)
+- [三、快速搭建mybatis](#三快速搭建mybatis)
+- [四、核心配置文件详解](#四核心配置文件详解)
+- [五、MyBatis获取参数的两种方式](#五mybatis获取参数的两种方式)
+- [六、MyBatis中的各种查询功能](#六mybatis中的各种查询功能)
+- [七、特殊SQL的执行](#七特殊sql的执行)
+- [八、自定义映射resultMap(resultMap处理字段和属性的映射关系)](#八自定义映射resultmapresultmap处理字段和属性的映射关系)
+- [九、动态SQL](#九动态sql)
+- [十、MyBatis的缓存](#十mybatis的缓存)
+- [十一、MyBatis的逆向工程](#十一mybatis的逆向工程)
+- [十二、分页插件](#十二分页插件)
+
+<!-- /code_chunk_output -->
+
+
+# 一、简介
 ![1](mybatis_pic/mybatis01.PNG)
-#二、和其他持久层技术对比
+# 二、和其他持久层技术对比
 ![1](mybatis_pic/mybatis02.PNG)
-#三、快速搭建mybatis
+# 三、快速搭建mybatis
 >(一)创建maven工程
 
 >(二)导入依赖
@@ -129,7 +150,7 @@
 >(六)创建测试类
 >>![1](mybatis_pic/mybatis07.PNG)
 
-#四、核心配置文件详解
+# 四、核心配置文件详解
 >environments
 >>![1](mybatis_pic/mybatis09.PNG)
 
@@ -148,12 +169,11 @@
 >>- ![1](mybatis_pic/mybatis15.PNG)
 >>- ![1](mybatis_pic/mybatis16.PNG)
 
-#五、MyBatis获取参数的两种方式
+# 五、MyBatis获取参数的两种方式
 >(一)两种方式
->- 1.${}：本质是字符串拼接，拼接sql语句时需要手动在sql语句里给${}加上单引号，即'${}'
-
+>- ![1](mybatis_pic/mybatis108.PNG)
+>- 1.\${}：本质是字符串拼接，拼接sql语句时需要手动在sql语句里给${}加上单引号，即'\${}'
 >- 2.#{}：本质占位符赋值
-
 >(二)获取参数的不同情况
 >>- 1.单个字面量类型的参数：
 >>>两种方式皆可使用
@@ -184,7 +204,7 @@
 >>>>- 第一种以@Param注解的value值为键，实参为值
 >>>>- 第二种以param1、param2为键，实参为值
 
-#六、MyBatis中的各种查询功能
+# 六、MyBatis中的各种查询功能
 >- (一)查询一个实体类对象(只能接收一条数据，接收多条数据会抛异常TooManyResultsException)
 >- (二)查询一个list集合(可以接收一条数据，也可接收多条数据)
 >>- ![1](mybatis_pic/mybatis32.PNG)
@@ -212,7 +232,7 @@
 >>>>- ![1](mybatis_pic/mybatis44.PNG)
 >>>>- ![1](mybatis_pic/mybatis47.PNG)
 
-#七、特殊SQL的执行
+# 七、特殊SQL的执行
 >- (一)模糊查询
 >>- 使用#{}赋值为模糊查询的sql语句中的参数赋值
 >>>- 1.将%模糊查询符号使用双引号包裹
@@ -237,7 +257,7 @@
 >>>- ![1](mybatis_pic/mybatis57.PNG)
 >>>- ![1](mybatis_pic/mybatis58.PNG)
 
-#八、自定义映射resultMap(resultMap处理字段和属性的映射关系)
+# 八、自定义映射resultMap(resultMap处理字段和属性的映射关系)
 >- 若字段名和实体类中的属性名不一致，
 >>- (一)可以在MyBatis的核心配置文件中设置setting全局配置，设置下划线_命名规则自动映射为驼峰命名规则
 >>>- ![1](mybatis_pic/mybatis60.PNG)
@@ -275,7 +295,7 @@
 >>>- ![1](mybatis_pic/mybatis76.PNG)
 >>>- ![1](mybatis_pic/mybatis77.PNG)
 
-#九、动态SQL
+# 九、动态SQL
 >- (一)if标签
 >>- ![1](mybatis_pic/mybatis79.PNG)
 >>- ![1](mybatis_pic/mybatis80.PNG)
@@ -316,7 +336,7 @@
 >>- 封装经常使用的sql语句片段，在sql语句中配合include标签插入
 >>>- ![1](mybatis_pic/mybatis93.PNG)
 
-#十、MyBatis的缓存
+# 十、MyBatis的缓存
 >- (一)MyBatis的一级缓存(默认开启)
 >>- ![1](mybatis_pic/mybatis94.PNG)
 >>- 清空缓存的方法：
@@ -397,7 +417,7 @@
         <logger name="" level="DEBUG"/>
     </configuration>
 
-#十一、MyBatis的逆向工程
+# 十一、MyBatis的逆向工程
 ![1](mybatis_pic/mybatis103.PNG)
 >- 1.导入依赖和插件
     
@@ -495,7 +515,7 @@
 >>- ![1](mybatis_pic/mybatis105.PNG)
 >>- ![1](mybatis_pic/mybatis106.PNG)
 
-#十二、分页插件
+# 十二、分页插件
 >- 分页插件的使用步骤
 >>- 1.添加依赖
     
