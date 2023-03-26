@@ -1,6 +1,6 @@
 [toc]
 # 一、SpringMVC简介
-   
+
 ## (一)导入：什么是MVC：
 ![1](springMVC_pic/whatisMVC.PNG)
 
@@ -37,10 +37,8 @@
 ### 8.总结
 ![1](springMVC_pic/%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.PNG)
 
-
 注解方式：
 # 二、基础功能
-    
 ## (一)注解开发：
 ### 1.注解：
 #### (1)@RequestMapping
@@ -221,100 +219,98 @@
                     ![1](springMVC_pic/%E6%B3%A8%E8%A7%A3%E6%96%B9%E5%BC%8F%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%99%A8.PNG)
 
 # 三、RESTful
-	(一)简介：
-        ![1](springMVC_pic/RESTFul%E7%AE%80%E4%BB%8B.PNG)
-    (二)实现：
-        ![1](springMVC_pic/RESTFul%E5%AE%9E%E7%8E%B0.PNG)
-    (三)由于浏览器不支持除了GET和POST方式外的请求方式(ajax方式支持除了GET和POST方式外的请求方式，但也只是部分浏览器支持)，所以需要额外配置HiddenHttpMethodFilter过滤器以支持除了GET和POST方式外的请求方式
-        1.在web.xml中配置HiddenHttpMethodFilter过滤器，此过滤器的配置映射(filter-mapping)必须在设置编码的过滤器之后(过滤器的过滤顺序)
-            ![1](springMVC_pic/HiddenHttpMethodFilter%E8%BF%87%E6%BB%A4%E5%99%A8.PNG)
-        2.提交方式
-            (1)form表单方式：
-                必须是post方式且含有hidden属性的input标签：
-                ![1](springMVC_pic/%E6%8F%90%E4%BA%A4form%E8%A1%A8%E5%8D%95%E5%BF%85%E9%A1%BB%E6%98%AFpost%E6%96%B9%E5%BC%8F%E4%B8%94%E5%90%AB%E6%9C%89hidden%E5%B1%9E%E6%80%A7%E7%9A%84input%E6%A0%87%E7%AD%BE.PNG)
-            (2)超链接方式：
-                ![1](springMVC_pic/RESTFul%E7%9A%84%E5%88%A0%E9%99%A4%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B01.PNG)
-                ![1](springMVC_pic/RESTFul%E7%9A%84%E5%88%A0%E9%99%A4%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B02.PNG)
-                ![1](springMVC_pic/RESTFul%E7%9A%84%E5%88%A0%E9%99%A4%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B03.PNG)
+## (一)简介：
+>> ![1](springMVC_pic/RESTFul%E7%AE%80%E4%BB%8B.PNG)
+## (二)实现：
+>> ![1](springMVC_pic/RESTFul%E5%AE%9E%E7%8E%B0.PNG)
+## (三)由于浏览器不支持除了GET和POST方式外的请求方式(ajax方式支持除了GET和POST方式外的请求方式，但也只是部分浏览器支持)，所以需要额外配置HiddenHttpMethodFilter过滤器以支持除了GET和POST方式外的请求方式
+### 1.在web.xml中配置HiddenHttpMethodFilter过滤器，此过滤器的配置映射(filter-mapping)必须在设置编码的过滤器之后(过滤器的过滤顺序)
+>>> ![1](springMVC_pic/HiddenHttpMethodFilter%E8%BF%87%E6%BB%A4%E5%99%A8.PNG)
+### 2.提交方式
+#### (1)form表单方式：
+>>>> 必须是post方式且含有hidden属性的input标签：
+>>>> ![1](springMVC_pic/%E6%8F%90%E4%BA%A4form%E8%A1%A8%E5%8D%95%E5%BF%85%E9%A1%BB%E6%98%AFpost%E6%96%B9%E5%BC%8F%E4%B8%94%E5%90%AB%E6%9C%89hidden%E5%B1%9E%E6%80%A7%E7%9A%84input%E6%A0%87%E7%AD%BE.PNG)
+#### (2)超链接方式：
+>>>> ![1](springMVC_pic/RESTFul%E7%9A%84%E5%88%A0%E9%99%A4%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B01.PNG)
+>>>> ![1](springMVC_pic/RESTFul%E7%9A%84%E5%88%A0%E9%99%A4%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B02.PNG)
+>>>> ![1](springMVC_pic/RESTFul%E7%9A%84%E5%88%A0%E9%99%A4%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B03.PNG)
 # 四、注解配置SpringMVC(不使用web.xml和SpringMVC.xml)
-	(一)创建初始化类，替代web.xml
-            ![1](springMVC_pic/SpringMVC%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%911.PNG)
-        1.创建初始化类，继承AbstractAnnotationConfigDispatcherServletInitializer父类
-        2.重写三个方法:
-            (1)getRootConfigClasses():获取spring的配置类，返回值为class数组，将spring的配置类添加在数组内，则指定了spring的配置类
-                ![1](springMVC_pic/SpringMVC%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%911-%E6%8C%87%E5%AE%9Aspring%E7%9A%84%E9%85%8D%E7%BD%AE%E7%B1%BB.PNG)
-            (2)etServletConfigClasses():指定SpringMVC的配置类，返回值为class数组，将springMVC的配置类添加在数组内，则指定了springMVC的配置类
-                ![1](springMVC_pic/SpringMVC%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%911-%E6%8C%87%E5%AE%9AspringMVC%E7%9A%84%E9%85%8D%E7%BD%AE%E7%B1%BB.PNG)
-            (3)getServletMappings():获取DispatcherServlet的映射路径/规则(url-pattern)，返回字符串数组，将url-pattern的规则以字符串形式添加进数组即可
-                ![1](springMVC_pic/SpringMVC%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%911-%E6%8C%87%E5%AE%9ADispatcherServlet%E7%9A%84%E6%98%A0%E5%B0%84%E8%B7%AF%E5%BE%84(%E8%A7%84%E5%88%99)(url-pattern).PNG)
-        3.配置过滤器，重写getServletFilters()方法，返回值是过滤器数组，在此方法内创建过滤器对象，将对象添加在返回的数组内，则配置了过滤器
-            ![1](springMVC_pic/SpringMVC%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%911-%E9%85%8D%E7%BD%AE%E8%BF%87%E6%BB%A4%E5%99%A8.PNG)
-    (二)创建Spring配置类
-        1.创建一个类，使用注解@Configuration标注
-    (三)创建SpringMVC配置类
-        1.创建一个类，使用注解@Configuration标注
-            ![1](springMVC_pic/SpringMVC纯注解开发1-创建SpringMVC的配置类.PNG)
-        2.开启扫描组件：
-            使用注解@ComponentScan标注此类
-        3.配置视图解析器(thymeleaf)
-            在此配置类中写入
-                    //配置生成模板解析器
-                    @Bean
-                    public ITemplateResolver templateResolver(){
-                        WebApplicationContext currentWebApplicationContext = ContextLoader.getCurrentWebApplicationContext();
-                        ServletContextTemplateResolver servletContextTemplateResolver = new ServletContextTemplateResolver(currentWebApplicationContext.getServletContext());
-                        servletContextTemplateResolver.setPrefix("/WEB-INF/templates");
-                        servletContextTemplateResolver.setSuffix(".html");
-                        servletContextTemplateResolver.setCharacterEncoding("UTF-8");
-                        servletContextTemplateResolver.setTemplateMode(TemplateMode.HTML);
-                        return servletContextTemplateResolver;
-                    }
-                    //生成模板引擎并为模板引擎注入模板解析器
-                    @Bean
-                    public SpringTemplateEngine templateEngine(ITemplateResolver templateResolver){
-                        SpringTemplateEngine springTemplateEngine = new SpringTemplateEngine();
-                        springTemplateEngine.setTemplateResolver(templateResolver);
-                        return springTemplateEngine;
-                    }
-                    //生成视图解析器并为解析器注入模板引擎
-                    @Bean
-                    public ViewResolver viewResolver(SpringTemplateEngine springTemplateEngine){
-                        ThymeleafViewResolver thymeleafViewResolver = new ThymeleafViewResolver();
-                        thymeleafViewResolver.setCharacterEncoding("UTF-8");
-                        thymeleafViewResolver.setTemplateEngine(springTemplateEngine);
-                        return thymeleafViewResolver;
-                    }
-            ![1](springMVC_pic/SpringMVC%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%912-%E9%85%8D%E7%BD%AE%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8.PNG)
-        4.view-contorller(视图控制器，不开启MVC的注解驱动会使控制器方法的请求映射失效)
-            配置类实现WebMvcConfigurer接口，并重写方法addViewControllers(ViewControllerRegistry registry)
-                ![1](springMVC_pic/SpringMVC纯注解开发2-view-contorller(视图控制器).PNG)
-        5.default-servlet-handler(开启对静态资源的访问(开启默认的servlet)，不开启MVC的注解驱动会使控制器方法的请求映射失效)
-            配置类实现WebMvcConfigurer接口，并重写方法configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer)
-                ![1](springMVC_pic/SpringMVC纯注解开发2-开启对静态资源的访问(开启默认的servlet).PNG)
-        6.annotation-driven(MVC的注解驱动，解除使用了试图控制器导致的控制器方法中请求映射失效，配合default-servlet-handler访问控制器映射的方法)：
-            使用注解@EnableWebMvc标注此类
-        7.文件上传解析器
-            在此配置类中写入
-                //配置文件上传解析器
-                @Bean
-                public MultipartResolver multipartResolver(){
-                    CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
-                    return commonsMultipartResolver;
-                }
-            ![1](springMVC_pic/SpringMVC纯注解开发2-配置文件上传解析器.PNG)
-        8.异常处理器
-            配置类实现WebMvcConfigurer接口，并重写方法configureHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers)
-                ![1](springMVC_pic/SpringMVC纯注解开发2-配置自定义异常处理器.PNG)
-        9.拦截器
-            (1)创建一个拦截器类，实现HandlerInterceptor接口，并重写preHandle、postHandler、afterCompletion三个方法
-                preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)方法中，返回false表示拦截，返回true表示放行，需要放行则返回true
-            (2)配置类实现WebMvcConfigurer接口，并重写方法addInterceptors(InterceptorRegistry registry)
-                ![1](springMVC_pic/SpringMVC纯注解开发2-配置拦截器.PNG)
+## (一)创建初始化类，替代web.xml
+>> ![1](springMVC_pic/SpringMVC%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%911.PNG)
+### 1.创建初始化类，继承AbstractAnnotationConfigDispatcherServletInitializer父类
+### 2.重写三个方法:
+#### (1)getRootConfigClasses():获取spring的配置类，返回值为class数组，将spring的配置类添加在数组内，则指定了spring的配置类
+>>>> ![1](springMVC_pic/SpringMVC%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%911-%E6%8C%87%E5%AE%9Aspring%E7%9A%84%E9%85%8D%E7%BD%AE%E7%B1%BB.PNG)
+#### (2)getServletConfigClasses():指定SpringMVC的配置类，返回值为class数组，将springMVC的配置类添加在数组内，则指定了springMVC的配置类
+>>>> ![1](springMVC_pic/SpringMVC%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%911-%E6%8C%87%E5%AE%9AspringMVC%E7%9A%84%E9%85%8D%E7%BD%AE%E7%B1%BB.PNG)
+#### (3)getServletMappings():获取DispatcherServlet的映射路径/规则(url-pattern)，返回字符串数组，将url-pattern的规则以字符串形式添加进数组即可
+>>>> ![1](springMVC_pic/SpringMVC%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%911-%E6%8C%87%E5%AE%9ADispatcherServlet%E7%9A%84%E6%98%A0%E5%B0%84%E8%B7%AF%E5%BE%84(%E8%A7%84%E5%88%99)(url-pattern).PNG)
+### 3.配置过滤器，重写getServletFilters()方法，返回值是过滤器数组，在此方法内创建过滤器对象，将对象添加在返回的数组内，则配置了过滤器
+>>>> ![1](springMVC_pic/SpringMVC%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%911-%E9%85%8D%E7%BD%AE%E8%BF%87%E6%BB%A4%E5%99%A8.PNG)
+## (二)创建Spring配置类
+### 1.创建一个类，使用注解@Configuration标注
+## (三)创建SpringMVC配置类
+### 1.创建一个类，使用注解@Configuration标注
+>>> ![1](springMVC_pic/SpringMVC纯注解开发1-创建SpringMVC的配置类.PNG)
+### 2.开启扫描组件：
+>>> 使用注解@ComponentScan标注此类
+### 3.配置视图解析器(thymeleaf)
+>>> 在此配置类中写入
+>>>>        //配置生成模板解析器
+>>>>        @Bean
+>>>>        public ITemplateResolver templateResolver(){
+>>>>            WebApplicationContext currentWebApplicationContext = ContextLoader.getCurrentWebApplicationContext();
+>>>>            ServletContextTemplateResolver servletContextTemplateResolver = new ServletContextTemplateResolver(currentWebApplicationContext.getServletContext());
+>>>>            servletContextTemplateResolver.setPrefix("/WEB-INF/templates");
+>>>>            servletContextTemplateResolver.setSuffix(".html");
+>>>>            servletContextTemplateResolver.setCharacterEncoding("UTF-8");
+>>>>            servletContextTemplateResolver.setTemplateMode(TemplateMode.HTML);
+>>>>            return servletContextTemplateResolver;
+>>>>        }
+>>>>        //生成模板引擎并为模板引擎注入模板解析器
+>>>>        @Bean
+>>>>        public SpringTemplateEngine templateEngine(ITemplateResolver templateResolver){
+>>>>            SpringTemplateEngine springTemplateEngine = new SpringTemplateEngine();
+>>>>            springTemplateEngine.setTemplateResolver(templateResolver);
+>>>>            return springTemplateEngine;
+>>>>        }
+>>>>        //生成视图解析器并为解析器注入模板引擎
+>>>>        @Bean
+>>>>        public ViewResolver viewResolver(SpringTemplateEngine springTemplateEngine){
+>>>>            ThymeleafViewResolver thymeleafViewResolver = new ThymeleafViewResolver();
+>>>>            thymeleafViewResolver.setCharacterEncoding("UTF-8");
+>>>>            thymeleafViewResolver.setTemplateEngine(springTemplateEngine);
+>>>>            return thymeleafViewResolver;
+>>>>        }
+>>>![1](springMVC_pic/SpringMVC%E7%BA%AF%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%912-%E9%85%8D%E7%BD%AE%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8.PNG)
+### 4.view-contorller(视图控制器，不开启MVC的注解驱动会使控制器方法的请求映射失效)
+>>> 配置类实现WebMvcConfigurer接口，并重写方法addViewControllers(ViewControllerRegistry registry)
+>>> ![1](springMVC_pic/SpringMVC纯注解开发2-view-contorller(视图控制器).PNG)
+### 5.default-servlet-handler(开启对静态资源的访问(开启默认的servlet)，不开启MVC的注解驱动会使控制器方法的请求映射失效)
+>>> 配置类实现WebMvcConfigurer接口，并重写方法configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer)
+>>> ![1](springMVC_pic/SpringMVC纯注解开发2-开启对静态资源的访问(开启默认的servlet).PNG)
+### 6.annotation-driven(MVC的注解驱动，解除使用了试图控制器导致的控制器方法中请求映射失效，配合default-servlet-handler访问控制器映射的方法)：
+>>> 使用注解@EnableWebMvc标注此类
+### 7.文件上传解析器
+>>> 在此配置类中写入
+>>>>        //配置文件上传解析器
+>>>>        @Bean
+>>>>        public MultipartResolver multipartResolver(){
+>>>>            CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
+>>>>            return commonsMultipartResolver;
+>>>>        }
+>>> ![1](springMVC_pic/SpringMVC纯注解开发2-配置文件上传解析器.PNG)
+### 8.异常处理器
+>>> 配置类实现WebMvcConfigurer接口，并重写方法configureHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers)
+>>>![1](springMVC_pic/SpringMVC纯注解开发2-配置自定义异常处理器.PNG)
+### 9.拦截器
+#### (1)创建一个拦截器类，实现HandlerInterceptor接口，并重写preHandle、postHandler、afterCompletion三个方法
+>>>> preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)方法中，返回false表示拦截，返回true表示放行，需要放行则返回true
+#### (2)配置类实现WebMvcConfigurer接口，并重写方法addInterceptors(InterceptorRegistry registry)
+>>>> ![1](springMVC_pic/SpringMVC纯注解开发2-配置拦截器.PNG)
 # 五、SpringMVC执行流程
-    
-	(一)SpringMVC的常用组件
-        ![1](springMVC_pic/SpringMVC的常用组件.PNG)
-    (二)DispatcherServlet的初始化过程
-        <!-- DispatcherServlet本质上是一个Servlet，所以天然遵循Servlet的生命周期，所以宏观上是Servlet生命周期来进行调度 -->
-        
+## (一)SpringMVC的常用组件
+>> ![1](springMVC_pic/SpringMVC的常用组件.PNG)
+## (二)DispatcherServlet的初始化过程
+    <!-- DispatcherServlet本质上是一个Servlet，所以天然遵循Servlet的生命周期，所以宏观上是Servlet生命周期来进行调度 -->
 # 六、扩展功能

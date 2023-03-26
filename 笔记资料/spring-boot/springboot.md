@@ -147,7 +147,7 @@
 ###### 引入对应starter场景，对应的场景才会开启自动配置
 ###### SpringBoot所有自动配置功能都在spring-boot-autoconfigure包里
 >>>>>>      <dependency>
->>>>>>          <groupId>org.springframework。boot</groupId>
+>>>>>>          <groupId>org.springframework.boot</groupId>
 >>>>>>          <artifactId>spring-boot-autoconfigure</artifactId>
 >>>>>>          <version>2.3.4.RELEASE</version>
 >>>>>>          <scope>compile</scope>
