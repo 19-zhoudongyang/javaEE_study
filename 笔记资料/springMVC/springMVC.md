@@ -51,10 +51,10 @@
 
 ##### {3}属性：
 ###### <1>value(使用@RequestMapping必须设置此属性)
-####### *1.请求路径，可以设置多个值，可以匹配多个请求地址吗，处理多个请求
-####### *2.支持ant风格路径：
+>>>>>> *1.请求路径，可以设置多个值，可以匹配多个请求地址吗，处理多个请求
+>>>>>> *2.支持ant风格路径：
 ![1](springMVC_pic/%40RequestMapping%E5%B1%9E%E6%80%A7value%E6%94%AF%E6%8C%81ant%E9%A3%8E%E6%A0%BC%E8%B7%AF%E5%BE%84.PNG)
-####### *3.支持占位符
+>>>>>> *3.支持占位符
 ![1](springMVC_pic/%40RequestMapping%E5%B1%9E%E6%80%A7value%E6%94%AF%E6%8C%81%E5%8D%A0%E4%BD%8D%E7%AC%A6.PNG)
 需要使用注解@PathVariable(value="")标注方法形参接收参数，如果不设置属性值，则默认为属性名；请求路径必须包含参数，否则404
 ![1](springMVC_pic/%40RequestMapping%E5%B1%9E%E6%80%A7value%E6%94%AF%E6%8C%81%E5%8D%A0%E4%BD%8D%E7%AC%A62.PNG)

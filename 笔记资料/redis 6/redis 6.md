@@ -394,60 +394,60 @@
 >>>>     }
 ### 测试相关数据类型
 #### Jedis-API:    Key
->>>>     jedis.set("k1", "v1");
->>>>     jedis.set("k2", "v2");
->>>>     jedis.set("k3", "v3");
->>>>     Set<String> keys = jedis.keys("*");
->>>>     System.out.println(keys.size());
->>>>     for (String key : keys) {
->>>>     System.out.println(key);
->>>>     }
->>>>     System.out.println(jedis.exists("k1"));
->>>>     System.out.println(jedis.ttl("k1"));                
->>>>     System.out.println(jedis.get("k1"));
+>>>>      jedis.set("k1", "v1");
+>>>>      jedis.set("k2", "v2");
+>>>>      jedis.set("k3", "v3");
+>>>>      Set<String> keys = jedis.keys("*");
+>>>>      System.out.println(keys.size());
+>>>>      for (String key : keys) {
+>>>>        System.out.println(key);
+>>>>      }
+>>>>      System.out.println(jedis.exists("k1"));
+>>>>      System.out.println(jedis.ttl("k1"));                
+>>>>      System.out.println(jedis.get("k1"));
 #### Jedis-API:    String
->>>>     jedis.mset("str1","v1","str2","v2","str3","v3");
->>>>     System.out.println(jedis.mget("str1","str2","str3"));
+>>>>      jedis.mset("str1","v1","str2","v2","str3","v3");
+>>>>      System.out.println(jedis.mget("str1","str2","str3"));
 #### Jedis-API:    List
->>>>     List<String> list = jedis.lrange("mylist",0,-1);
->>>>     for (String element : list) {
->>>>     System.out.println(element);
->>>>     }
+>>>>      List<String> list = jedis.lrange("mylist",0,-1);
+>>>>      for (String element : list) {
+>>>>        System.out.println(element);
+>>>>      }
 #### Jedis-API:    set
->>>>     jedis.sadd("orders", "order01");
->>>>     jedis.sadd("orders", "order02");
->>>>     jedis.sadd("orders", "order03");
->>>>     jedis.sadd("orders", "order04");
->>>>     Set<String> smembers = jedis.smembers("orders");
->>>>     for (String order : smembers) {
->>>>     System.out.println(order);
->>>>     }
->>>>     jedis.srem("orders", "order02");
+>>>>      jedis.sadd("orders", "order01");
+>>>>      jedis.sadd("orders", "order02");
+>>>>      jedis.sadd("orders", "order03");
+>>>>      jedis.sadd("orders", "order04");
+>>>>      Set<String> smembers = jedis.smembers("orders");
+>>>>      for (String order : smembers) {
+>>>>        System.out.println(order);
+>>>>      }
+>>>>      jedis.srem("orders", "order02");
 #### Jedis-API:    hash
->>>>     jedis.hset("hash1","userName","lisi");
->>>>     System.out.println(jedis.hget("hash1","userName"));
->>>>     Map<String,String> map = new HashMap<String,String>();
->>>>     map.put("telphone","13810169999");
->>>>     map.put("address","atguigu");
->>>>     map.put("email","abc@163.com");
->>>>     jedis.hmset("hash2",map);
->>>>     List<String> result = jedis.hmget("hash2", "telphone","email");
->>>>     for (String element : result) {
->>>>     System.out.println(element);
->>>>     }
+>>>>      jedis.hset("hash1","userName","lisi");
+>>>>      System.out.println(jedis.hget("hash1","userName"));
+>>>>      Map<String,String> map = new HashMap<String,String>();
+>>>>      map.put("telphone","13810169999");
+>>>>      map.put("address","atguigu");
+>>>>      map.put("email","abc@163.com");
+>>>>      jedis.hmset("hash2",map);
+>>>>      List<String> result = jedis.hmget("hash2", "telphone","email");
+>>>>      for (String element : result) {
+>>>>        System.out.println(element);
+>>>>      }
 #### Jedis-API:    zset
->>>>     jedis.zadd("zset01", 100d, "z3");
->>>>     jedis.zadd("zset01", 90d, "l4");
->>>>     jedis.zadd("zset01", 80d, "w5");
->>>>     jedis.zadd("zset01", 70d, "z6");
->>>>     Set<String> zrange = jedis.zrange("zset01", 0, -1);
->>>>     for (String e : zrange) {
->>>>     System.out.println(e);
->>>>     }
+>>>>      jedis.zadd("zset01", 100d, "z3");
+>>>>      jedis.zadd("zset01", 90d, "l4");
+>>>>      jedis.zadd("zset01", 80d, "w5");
+>>>>      jedis.zadd("zset01", 70d, "z6");
+>>>>      Set<String> zrange = jedis.zrange("zset01", 0, -1);
+>>>>      for (String e : zrange) {
+>>>>        System.out.println(e);
+>>>>      }
 ## Redis_Jedis_实例
 ### 完成一个手机验证码功能
->>>![1](/pic/95.PNG)
->>>![1](/pic/96.PNG)
+>>>![1](pic/95.PNG)
+>>>![1](pic/96.PNG)
 # 八、Redis6与SpringBoot整合
 ## 整合步骤
 ### 在pom.xml文件中引入redis相关依赖
@@ -483,7 +483,7 @@
 >>>     @EnableCaching
 >>>     @Configuration
 >>>     public class RedisConfig extends CachingConfigurerSupport {
->>>     
+>>>         //
 >>>         @Bean
 >>>         public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
 >>>             RedisTemplate<String, Object> template = new RedisTemplate<>();
@@ -502,7 +502,7 @@
 >>>             template.setHashValueSerializer(jackson2JsonRedisSerializer);
 >>>             return template;
 >>>         }
->>>     
+>>>         //
 >>>         @Bean
 >>>         public CacheManager cacheManager(RedisConnectionFactory factory) {
 >>>             RedisSerializer<String> redisSerializer = new StringRedisSerializer();
@@ -530,7 +530,7 @@
 >>>     public class RedisTestController {
 >>>         @Autowired
 >>>         private RedisTemplate redisTemplate;
->>>     
+>>>         //       
 >>>         @GetMapping
 >>>         public String testRedis() {
 >>>             //设置值到redis
@@ -543,193 +543,193 @@
 # 九、Redis6的事务操作
 ## Redis_事务_锁机制_秒杀
 ### Redis的事务定义
->>>![1](/pic/97.PNG)
+>>>![1](pic/97.PNG)
 ### Multi、Exec、discard
->>>![1](/pic/98.PNG)
->>>![1](/pic/99.PNG)
+>>>![1](pic/98.PNG)
+>>>![1](pic/99.PNG)
 ### 事务的错误处理
->>>![1](/pic/100.PNG)
->>>![1](/pic/101.PNG)
+>>>![1](pic/100.PNG)
+>>>![1](pic/101.PNG)
 ### 为什么要做成事务
->>>![1](/pic/102.PNG)
+>>>![1](pic/102.PNG)
 ### 事务冲突的问题
 #### 例子
->>>>![1](/pic/103.PNG)
+>>>>![1](pic/103.PNG)
 #### 悲观锁
->>>>![1](/pic/104.PNG)
+>>>>![1](pic/104.PNG)
 #### 乐观锁
->>>>![1](/pic/105.PNG)
+>>>>![1](pic/105.PNG)
 #### WATCH key [key ...]
->>>>![1](/pic/106.PNG)
->>>>![1](/pic/107.PNG)
+>>>>![1](pic/106.PNG)
+>>>>![1](pic/107.PNG)
 #### unwatch
->>>>![1](/pic/108.PNG)
+>>>>![1](pic/108.PNG)
 ### Redis事务三特性
->>>![1](/pic/109.PNG)
+>>>![1](pic/109.PNG)
 ## Redis_事务_秒杀案例
 ### 解决计数器和人员记录的事务操作
->>>![1](/pic/110.PNG)
+>>>![1](pic/110.PNG)
 ### Redis事务--秒杀并发模拟
->>>![1](/pic/111.PNG)
->>>![1](/pic/112.PNG)
->>>![1](/pic/113.PNG)
->>>![1](/pic/114.PNG)
+>>>![1](pic/111.PNG)
+>>>![1](pic/112.PNG)
+>>>![1](pic/113.PNG)
+>>>![1](pic/114.PNG)
 ### 超卖问题
->>>![1](/pic/115.PNG)
+>>>![1](pic/115.PNG)
 ### 利用乐观锁淘汰用户，解决超卖问题
->>>![1](/pic/116.PNG)
->>>![1](/pic/117.PNG)
+>>>![1](pic/116.PNG)
+>>>![1](pic/117.PNG)
 ### 继续增加并发测试
->>>![1](/pic/118.PNG)
->>>![1](/pic/119.PNG)
->>>![1](/pic/120.PNG)
+>>>![1](pic/118.PNG)
+>>>![1](pic/119.PNG)
+>>>![1](pic/120.PNG)
 ### 解决库存遗留问题
->>>![1](/pic/121.PNG)
->>>![1](/pic/122.PNG)
+>>>![1](pic/121.PNG)
+>>>![1](pic/122.PNG)
 ### Redis_事务_秒杀案例_代码
->>>![1](/pic/123.PNG)
->>>![1](/pic/124.PNG)
+>>>![1](pic/123.PNG)
+>>>![1](pic/124.PNG)
 # 十、Redis6持久化之RDB
 ## 总体介绍
->>![1](/pic/125.PNG)
->>![1](/pic/126.PNG)
+>>![1](pic/125.PNG)
+>>![1](pic/126.PNG)
 ## RDB（Redis DataBase）
 ### 官网介绍
->>>![1](/pic/127.PNG)
+>>>![1](pic/127.PNG)
 ### 是什么
->>>![1](/pic/128.PNG)
+>>>![1](pic/128.PNG)
 ### 备份是如何执行的
->>>![1](/pic/129.PNG)
+>>>![1](pic/129.PNG)
 ### Fork
->>>![1](/pic/130.PNG)
+>>>![1](pic/130.PNG)
 ### RDB持久化流程
->>>![1](/pic/131.PNG)
+>>>![1](pic/131.PNG)
 ### dump.rdb文件
->>>![1](/pic/132.PNG)
->>>![1](/pic/133.PNG)
+>>>![1](pic/132.PNG)
+>>>![1](pic/133.PNG)
 ### 配置位置
->>>![1](/pic/134.PNG)
+>>>![1](pic/134.PNG)
 ### 如何触发RDB快照；保持策略
 #### 配置文件中默认的快照配置
->>>>![1](/pic/135.PNG)
+>>>>![1](pic/135.PNG)
 #### 命令save VS bgsave
->>>>![1](/pic/136.PNG)
+>>>>![1](pic/136.PNG)
 #### flushall命令
->>>>![1](/pic/137.PNG)
+>>>>![1](pic/137.PNG)
 #### ###SNAPSHOTTING快照###
 #### Save
->>>>![1](/pic/138.PNG)
+>>>>![1](pic/138.PNG)
 #### stop-writes-on-bgsave-error
->>>>![1](/pic/139.PNG)
+>>>>![1](pic/139.PNG)
 #### rdbcompression 压缩文件
->>>>![1](/pic/140.PNG)
+>>>>![1](pic/140.PNG)
 #### rdbchecksum 检查完整性
->>>>![1](/pic/141.PNG)
+>>>>![1](pic/141.PNG)
 #### rdb的备份
->>>>![1](/pic/142.PNG)
+>>>>![1](pic/142.PNG)
 ### 优势
->>>![1](/pic/143.PNG)
->>>![1](/pic/144.PNG)
+>>>![1](pic/143.PNG)
+>>>![1](pic/144.PNG)
 ### 劣势
->>>![1](/pic/145.PNG)
+>>>![1](pic/145.PNG)
 ### 如何停止
->>>![1](/pic/146.PNG)
+>>>![1](pic/146.PNG)
 ### 小总结
->>>![1](/pic/147.PNG)
+>>>![1](pic/147.PNG)
 # 十一、Redis6持久化之AOF
 ## AOF（Append Only File）
 ### 是什么
->>>![1](/pic/148.PNG)
+>>>![1](pic/148.PNG)
 ### AOF持久化流程
->>>![1](/pic/149.PNG)
->>>![1](/pic/150.PNG)
+>>>![1](pic/149.PNG)
+>>>![1](pic/150.PNG)
 ### AOF默认不开启
->>>![1](/pic/151.PNG)
+>>>![1](pic/151.PNG)
 ### AOF和RDB同时开启，redis听谁的？
->>>![1](/pic/152.PNG)
+>>>![1](pic/152.PNG)
 ### AOF启动/修复/恢复
->>>![1](/pic/153.PNG)
->>>![1](/pic/154.PNG)
+>>>![1](pic/153.PNG)
+>>>![1](pic/154.PNG)
 ### AOF同步频率设置
->>>![1](/pic/155.PNG)
+>>>![1](pic/155.PNG)
 ### Rewrite压缩
->>>![1](/pic/156.PNG)
->>>![1](/pic/157.PNG)
->>>![1](/pic/158.PNG)
+>>>![1](pic/156.PNG)
+>>>![1](pic/157.PNG)
+>>>![1](pic/158.PNG)
 ### 优势
->>>![1](/pic/159.PNG)
+>>>![1](pic/159.PNG)
 ### 劣势
->>>![1](/pic/160.PNG)
+>>>![1](pic/160.PNG)
 ### 小总结
->>>![1](/pic/161.PNG)
+>>>![1](pic/161.PNG)
 ## 总结(Which one)
 ### 用哪个好
->>>![1](/pic/162.PNG)
+>>>![1](pic/162.PNG)
 ### 官网建议
->>>![1](/pic/163.PNG)
->>>![1](/pic/164.PNG)
+>>>![1](pic/163.PNG)
+>>>![1](pic/164.PNG)
 # 十二、Redis6的主从复制
 ## 是什么
->>>![1](/pic/165.PNG)
+>>>![1](pic/165.PNG)
 ## 能干嘛
->>>![1](/pic/166.PNG)
+>>>![1](pic/166.PNG)
 ## 怎么玩：主从复制
->>>![1](/pic/167.PNG)
+>>>![1](pic/167.PNG)
 ### 新建redis6379.conf，填写以下内容
->>>![1](/pic/168.PNG)
+>>>![1](pic/168.PNG)
 ### 新建redis6380.conf，填写以下内容
->>>![1](/pic/169.PNG)
+>>>![1](pic/169.PNG)
 ### 新建redis6381.conf，填写以下内容
->>>![1](/pic/170.PNG)
->>>![1](/pic/171.PNG)
+>>>![1](pic/170.PNG)
+>>>![1](pic/171.PNG)
 ### 启动三台redis服务器
->>>![1](/pic/172.PNG)
+>>>![1](pic/172.PNG)
 ### 查看系统进程，看看三台服务器是否启动
->>>![1](/pic/173.PNG)
+>>>![1](pic/173.PNG)
 ### 查看三台主机运行情况
->>>![1](/pic/174.PNG)
+>>>![1](pic/174.PNG)
 ### 配从(库)不配主(库)
->>>![1](/pic/175.PNG)
->>>![1](/pic/176.PNG)
+>>>![1](pic/175.PNG)
+>>>![1](pic/176.PNG)
 ## 常用3招
 ### 一主二仆
->>>![1](/pic/177.PNG)
->>>![1](/pic/178.PNG)
+>>>![1](pic/177.PNG)
+>>>![1](pic/178.PNG)
 ### 薪火相传
->>>![1](/pic/179.PNG)
+>>>![1](pic/179.PNG)
 ### 反客为主
->>>![1](/pic/180.PNG)
->>>![1](/pic/181.PNG)
+>>>![1](pic/180.PNG)
+>>>![1](pic/181.PNG)
 ## 复制原理
->>![1](/pic/182.PNG)
+>>![1](pic/182.PNG)
 ## 哨兵模式(sentinel)
 ### 是什么
->>>![1](/pic/183.PNG)
->>>![1](/pic/184.PNG)
+>>>![1](pic/183.PNG)
+>>>![1](pic/184.PNG)
 ### 怎么玩(使用步骤)
 #### 调整为一主二仆模式，6379带着6380、6381
->>>>![1](/pic/185.PNG)
+>>>>![1](pic/185.PNG)
 #### 自定义的/myredis目录下新建sentinel.conf文件，名字绝不能错
 #### 配置哨兵,填写内容
->>>>![1](/pic/186.PNG)
+>>>>![1](pic/186.PNG)
 #### 启动哨兵
->>>>![1](/pic/187.PNG)
->>>>![1](/pic/188.PNG)
+>>>>![1](pic/187.PNG)
+>>>>![1](pic/188.PNG)
 #### 当主机挂掉，从机选举中产生新的主机
->>>>![1](/pic/189.PNG)
->>>>![1](/pic/190.PNG)
+>>>>![1](pic/189.PNG)
+>>>>![1](pic/190.PNG)
 #### 复制延时
->>>>![1](/pic/191.PNG)
+>>>>![1](pic/191.PNG)
 ### 故障恢复
->>>![1](/pic/192.PNG)
+>>>![1](pic/192.PNG)
 ### 主从复制
 >>>     private static JedisSentinelPool jedisSentinelPool=null;
->>>     
+>>>     //
 >>>     public static  Jedis getJedisFromSentinel(){
 >>>     if(jedisSentinelPool==null){
 >>>                 Set<String> sentinelSet=new HashSet<>();
 >>>                 sentinelSet.add("192.168.11.103:26379");
->>>     
+>>>                 //
 >>>                 JedisPoolConfig jedisPoolConfig =new JedisPoolConfig();
 >>>                 jedisPoolConfig.setMaxTotal(10); //最大可用连接数
 >>>                 jedisPoolConfig.setMaxIdle(5); //最大闲置连接数
@@ -745,44 +745,44 @@
 >>>     }
 # 十三、Redis6集群
 ## 问题
->>![1](/pic/194.PNG)
+>>![1](pic/194.PNG)
 ## 什么是集群
->>![1](/pic/195.PNG)
+>>![1](pic/195.PNG)
 ## 删除持久化数据
->>![1](/pic/196.PNG)
+>>![1](pic/196.PNG)
 ## 制作6个实例，6379,6380,6381,6389,6390,6391
 ### 配置基本信息
->>>![1](/pic/197.PNG)
->>>![1](/pic/198.PNG)
+>>>![1](pic/197.PNG)
+>>>![1](pic/198.PNG)
 ### redis cluster配置修改
->>>![1](/pic/199.PNG)
+>>>![1](pic/199.PNG)
 ### 修改好redis6379.conf文件，拷贝多个redis.conf文件
->>>![1](/pic/200.PNG)
+>>>![1](pic/200.PNG)
 ### 使用查找替换修改另外5个文件 
->>>![1](/pic/201.PNG)
+>>>![1](pic/201.PNG)
 ### 启动6个redis服务
->>>![1](/pic/202.PNG)
+>>>![1](pic/202.PNG)
 ## 将六个节点合成一个集群
->>![1](/pic/203.PNG)
->>![1](/pic/204.PNG)
->>![1](/pic/205.PNG)
+>>![1](pic/203.PNG)
+>>![1](pic/204.PNG)
+>>![1](pic/205.PNG)
 ## -c 采用集群策略连接，设置数据会自动切换到相应的写主机
->>![1](/pic/206.PNG)
+>>![1](pic/206.PNG)
 ## 通过 cluster nodes 命令查看集群信息
->>![1](/pic/207.PNG)
+>>![1](pic/207.PNG)
 ## redis cluster 如何分配这六个节点?
->>![1](/pic/208.PNG)
+>>![1](pic/208.PNG)
 ## 什么是slots
->>![1](/pic/209.PNG)
+>>![1](pic/209.PNG)
 ## 在集群中录入值
->>![1](/pic/210.PNG)
->>![1](/pic/211.PNG)
+>>![1](pic/210.PNG)
+>>![1](pic/211.PNG)
 ## 查询集群中的值
->>![1](/pic/212.PNG)
+>>![1](pic/212.PNG)
 ## 故障恢复
->>![1](/pic/213.PNG)
+>>![1](pic/213.PNG)
 ## 集群的Jedis开发
->>![1](/pic/214.PNG)
+>>![1](pic/214.PNG)
 ### 代码
 >>>      public class JedisClusterTest {
 >>>        public static void main(String[] args) { 
@@ -794,37 +794,37 @@
 >>>        }
 >>>      }
 ## Redis 集群提供了以下好处
->>![1](/pic/215.PNG)
+>>![1](pic/215.PNG)
 ## Redis 集群的不足
->>![1](/pic/216.PNG)
+>>![1](pic/216.PNG)
 # 十四、Redis6应用问题解决
 ## 缓存穿透
 ### 问题描述
->>>![1](/pic/217.PNG)
+>>>![1](pic/217.PNG)
 ### 解决方案
->>>![1](/pic/218.PNG)
->>>![1](/pic/219.PNG)
+>>>![1](pic/218.PNG)
+>>>![1](pic/219.PNG)
 ## 缓存击穿
 ### 问题描述
->>>![1](/pic/220.PNG)
+>>>![1](pic/220.PNG)
 ### 解决方案
->>>![1](/pic/221.PNG)
->>>![1](/pic/222.PNG)
+>>>![1](pic/221.PNG)
+>>>![1](pic/222.PNG)
 ## 缓存雪崩
 ### 问题描述
->>>![1](/pic/223.PNG)
->>>![1](/pic/224.PNG)
+>>>![1](pic/223.PNG)
+>>>![1](pic/224.PNG)
 ### 解决方案
->>>![1](/pic/225.PNG)
->>>![1](/pic/226.PNG)
+>>>![1](pic/225.PNG)
+>>>![1](pic/226.PNG)
 ## 分布式锁
 ### 问题描述
->>>![1](/pic/227.PNG)
+>>>![1](pic/227.PNG)
 ### 解决方案：使用redis实现分布式锁
->>>![1](/pic/228.PNG)
->>>![1](/pic/229.PNG)
+>>>![1](pic/228.PNG)
+>>>![1](pic/229.PNG)
 ### 编写代码
->>>![1](/pic/230.PNG)
+>>>![1](pic/230.PNG)
 #### 代码
 >>>>        @GetMapping("testLock")
 >>>>        public void testLock(){
@@ -854,14 +854,14 @@
 >>>>                }
 >>>>            }
 >>>>        }
->>>![1](/pic/231.PNG)
->>>![1](/pic/232.PNG)
+>>>![1](pic/231.PNG)
+>>>![1](pic/232.PNG)
 ### 优化之设置锁的过期时间
->>>![1](/pic/233.PNG)
->>>![1](/pic/234.PNG)
+>>>![1](pic/233.PNG)
+>>>![1](pic/234.PNG)
 ### 优化之UUID防误删
->>>![1](/pic/235.PNG)
->>>![1](/pic/236.PNG)
+>>>![1](pic/235.PNG)
+>>>![1](pic/236.PNG)
 ### 优化之LUA脚本保证删除的原子性
 >>>     @GetMapping("testLockLua")
 >>>     public void testLockLua() {
@@ -914,9 +914,9 @@
 >>>         }
 >>>     }
 #### Lua 脚本详解：
->>>>![1](/pic/237.PNG)
->>>>![1](/pic/238.PNG)
->>>>![1](/pic/239.PNG)
+>>>>![1](pic/237.PNG)
+>>>>![1](pic/238.PNG)
+>>>>![1](pic/239.PNG)
 ### 总结
 #### 1.加锁
 >>>>        // 1. 从redis中获取锁,set k1 v1 px 20000 nx
@@ -935,23 +935,23 @@
 #### 3.重试
 >>>>        Thread.sleep(500);
 >>>>        testLock();
->>>>![1](/pic/240.PNG)
+>>>>![1](pic/240.PNG)
 # 十五、Redis6.0新功能
 ## ACL
 ### 简介
->>>![1](/pic/241.PNG)
->>>![1](/pic/242.PNG)
+>>>![1](pic/241.PNG)
+>>>![1](pic/242.PNG)
 ### 命令
->>>![1](/pic/243.PNG)
->>>![1](/pic/244.PNG)
->>>![1](/pic/245.PNG)
+>>>![1](pic/243.PNG)
+>>>![1](pic/244.PNG)
+>>>![1](pic/245.PNG)
 ## IO多线程
 ### 简介
->>>![1](/pic/246.PNG)
+>>>![1](pic/246.PNG)
 ### 原理架构
->>>![1](/pic/247.PNG)
+>>>![1](pic/247.PNG)
 ## 工具支持 Cluster
->>![1](/pic/248.PNG)
->>![1](/pic/249.PNG)
+>>![1](pic/248.PNG)
+>>![1](pic/249.PNG)
 ## Redis新功能持续关注
->>![1](/pic/250.PNG)
+>>![1](pic/250.PNG)

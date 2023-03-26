@@ -1,7 +1,7 @@
-#一、搭建
+# 一、搭建
 >- (一)导入依赖
-     
-    <properties>
+
+        <properties>
             <spring.version>5.3.22</spring.version>
         </properties>
     
